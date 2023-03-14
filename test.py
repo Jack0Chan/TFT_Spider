@@ -1,5 +1,4 @@
-import requests
+from TFTData import TFTData
 
-response = requests.get('https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js')
-
-print(response.json())
+if __name__ == '__main__':
+    print(TFTData().chess_name_info)

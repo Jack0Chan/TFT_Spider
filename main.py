@@ -249,7 +249,7 @@ class TFTData:
     with open('TFTData.py', 'w', encoding='utf-8') as f:
         f.writelines(res)
 
-
+ 
 if __name__ == '__main__':
     dc = DataCollector()
     
