@@ -8,7 +8,9 @@
 
 ## 为了方便伸手党...
 
-为了方便伸手党，所有数据已经下载好，并保存在`tft_data`和`tft_images`下。大家将此项目clone下来即可得到所有数据。
+1. 为了方便伸手党，所有数据已经下载好，并保存在`tft_data`和`tft_images`文件夹中。
+2. `clone`此项目即可得到所有数据，无需运行代码。
+3. 如果赛季过期，请在`issue`里提醒作者更新数据，方便伸手党使用。
 
 ## 爬取数据内容
 
@@ -20,7 +22,7 @@
 
 2. 云顶官方数据，放到`tft_data/tft_raw_data.json`文件中，样例如下
     <details>
-    <summary>点击查看 tft_raw_data.json 内容示例。注意，为了方便阅读这里只展示部分数据。</summary>
+    <summary><font color="skyblue">点击查看 tft_raw_data.json 内容示例。注意，为了方便阅读这里只展示部分数据。</font></summary>
     <pre><code class="language-json">{
     "version_config": {
         "赛季名称": "s8-怪兽来袭",
@@ -128,7 +130,7 @@
 3. 作者处理过的云顶数据，使用起来更方便，放到`tft_data/tft_processed_data.json`文件中，主要包含
 
     <details>
-    <summary>点击查看 tft_processed_data.json 内容示例。注意，为了方便阅读这里只展示部分数据。</summary>
+    <summary><font color="skyblue">点击查看 tft_processed_data.json 内容示例。注意，为了方便阅读这里只展示部分数据。</font></summary>
     <pre><code class="language-json">{
     "all_chess_name": "安妮-加里奥-厄加特-乐芙兰-费德提克-凯尔-阿利斯塔-希维尔-索拉卡-努努和威朗普-厄运小姐-艾希-贾克斯-科加斯-拉莫斯-娑娜-迦娜-普朗克-布里茨-墨菲特-雷克顿-孙悟空-李青-薇恩-内瑟斯-波比-伊泽瑞尔-莫德凯撒-蕾欧娜-泰隆-锐雯-拉克丝-瑟庄妮-菲奥娜-璐璐-德莱文-辛德拉-奥瑞利安索尔-佐伊-卡莎-扎克-亚索-维克兹-塔莉垭-卡蜜尔-卑尔维斯-金克丝-佛耶戈-赛娜-劫-艾克-蔚-悠米-莎弥拉-塞拉斯-厄斐琉斯-芮尔-瑟提-尼菈-厄斐琉斯-暝涌-厄斐琉斯-地霜暗蚀-厄斐琉斯-对影",
     "all_race_name": "AI程序-幻灵战队-平民英雄-堕落使者-小天才-源计划：激光特工-战斗机甲-福牛守护者-星之守护者-超级英雄-怪兽-地下魔盗团",
