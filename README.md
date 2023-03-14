@@ -4,7 +4,7 @@
 
 数据来源：[腾讯官方云顶之弈主题站](https://lol.qq.com/tft/#/champion)
 
-<img src="readme_images/tft_web.png" width="40%">
+<img src="readme_images/tft_web.png" width="70%">
 
 ## 为了方便伸手党...
 
@@ -19,7 +19,7 @@
 
 1. 云顶的棋子、装备、海克斯、技能的图片，放到`tft_images`目录下。
    
-   <img src="readme_images/chess.png" width="60%">
+   <img src="readme_images/chess.png" width="70%">
 
 2. 云顶官方数据，放到`tft_data/tft_raw_data.json`文件中，样例如下
     <details>
