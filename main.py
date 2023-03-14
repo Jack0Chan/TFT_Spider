@@ -15,9 +15,10 @@ import requests
 from rich.progress import track
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-TFT_RAW_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data/tft_raw_data.json')
-TFT_PROCESSED_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data/tft_processed_data.json')
-TFT_PY_CLASS_FILE = os.path.join(ROOT_DIR, 'tft_data/TFTData.py')
+TFT_RAW_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data\\tft_raw_data.json')
+TFT_PROCESSED_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data\\tft_processed_data.json')
+TFT_PY_CLASS_FILE = os.path.join(ROOT_DIR, 'tft_data\\TFTData.py')
+TFT_IMG_FILE = os.path.join(ROOT_DIR, 'tft_images')
 
 def load_json(filename: str) -> None:
     with open(filename, 'r', encoding='utf-8') as load_f:
@@ -125,7 +126,8 @@ class RawDataCollector:
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
         }
         if os.path.exists(img_name):
-            print(f"file_exists: {img_name}")
+            # print(f"file_exists: {img_name}")
+            pass
         else:
             img_resp = requests.get(img_url, headers=headers, timeout=self.__time_out)
             if "was not found" in str(img_resp.content):
@@ -135,37 +137,33 @@ class RawDataCollector:
                 f.write(img_resp.content)
 
     def download_chess_imgs(self) -> None:
-        print("如果图片有错误，比如版本不对，请将所有图片删除重新下载。")
         chess_list = self.raw_data['chess']
         for chess in track(chess_list, description="正在爬取棋子图片"):
-            img_name = f"tft_images/chess/{chess['TFTID']}-{chess['title']}-{chess['displayName']}.jpg"
+            img_name = f"{TFT_IMG_FILE}/chess/{chess['TFTID']}-{chess['title']}-{chess['displayName']}.jpg"
             img_name = os.path.join(ROOT_DIR, img_name)
             img_url = f"https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/{chess['TFTID']}.jpg"
             self.__download_image(img_name, img_url)
 
     def download_skill_imgs(self) -> None:
-        print("如果图片有错误，比如版本不对，请将所有图片删除重新下载。")
         chess_list = self.raw_data['chess']
         for chess in track(chess_list, description="正在爬取技能图片"):
             img_name = f"{chess['TFTID']}-{chess['title']}-{chess['displayName']}-{chess['skillName']}.jpg"
-            img_name = f"tft_images/skill/{img_name}"
+            img_name = f"{TFT_IMG_FILE}/skill/{img_name}"
             img_name = os.path.join(ROOT_DIR, img_name)
             img_url = chess['skillImage']
             self.__download_image(img_name, img_url)
 
     def download_hex_imgs(self) -> None:
-        print("如果图片有错误，比如版本不对，请将所有图片删除重新下载。")
         hex_list = self.raw_data['hex']
         for hex_info in track(hex_list, description="正在爬取海克斯图片"):
-            img_name = f"tft_images/hex/{hex_info['hexId']}-{hex_info['name']}.png"
+            img_name = f"{TFT_IMG_FILE}/hex/{hex_info['hexId']}-{hex_info['name']}.png"
             img_name = os.path.join(ROOT_DIR, img_name)
             self.__download_image(img_name, hex_info['imgUrl'])
 
     def download_equipment_imgs(self) -> None:
-        print("如果图片有错误，比如版本不对，请将所有图片删除重新下载。")
         equip_list = self.raw_data['equip']
         for equip in track(equip_list, description="正在爬取装备图片"):
-            img_name = f"tft_images/equip/{equip['TFTID']}-{equip['name']}.png"
+            img_name = f"{TFT_IMG_FILE}/equip/{equip['TFTID']}-{equip['name']}.png"
             img_name = img_name.replace(" ", "").replace("//", "")
             img_name = os.path.join(ROOT_DIR, img_name)
             self.__download_image(img_name, equip['imagePath'])
@@ -297,18 +295,33 @@ class TFTData:
             f.writelines(res)
 
 
-
 if __name__ == '__main__':
-    # # 下载官方的raw数据
-    # rdc = RawDataCollector()
-    # # 保存爬取的信息到 TFT_RAW_DATA_FILE = 'tft_raw_data.json'
-    # rdc.save_tft_raw_data()
-    # # 下载图片
-    # rdc.download_all_imgs()
+    # 下载官方的raw数据
+    rdc = RawDataCollector()
+    # 保存爬取的信息到 TFT_RAW_DATA_FILE = 'tft_raw_data.json'
+    print()
+    print("================ 下载所有原始数据 ================")
+    rdc.save_tft_raw_data()
+    print(f'\033[32m原始数据爬取完成，保存到：{TFT_RAW_DATA_FILE}\033[0m')
+    print()
+
+    # 下载图片
+    print("================ 下载棋子、技能、海克斯、装备图片 ================")
+    print("\033[31m如果图片有错，比如版本不对，请将所有图片删除重新下载（只删除图片，别删除文件夹）。\033[0m")
+    rdc.download_all_imgs()
+    print(f"\033[32m图片下载完成，保存到：{TFT_IMG_FILE}\033[0m")
+    print()
 
     # 作者根据自己的需求对数据进行了处理和汇总
     tdp = TFTDataProcessor()
     # 处理好的数据保存到 TFT_PROCESSED_DATA_FILE = 'tft_processed_data.json'
+    print("================ 处理数据，导出json ================")
     tdp.save_tft_processed_data()
+    print(f"\033[32m数据处理完成，保存到：{TFT_PROCESSED_DATA_FILE}\033[0m")
+    print()
+
     # 保存一份TFTData.py的Singleton，方便作者自己调用。
+    print("================ 处理数据，导出py Singleton ================")
     tdp.save_py_class()
+    print(f"\033[32mSingleton构建完成，保存到：{TFT_PY_CLASS_FILE}\033[0m")
+    print()
