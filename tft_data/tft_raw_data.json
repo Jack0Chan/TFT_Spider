@@ -7,12 +7,7 @@
         "url_race_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/race.js",
         "url_job_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/job.js",
         "url_equip_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js",
-        "url_hex_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js",
-        "urlChessData": "https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js",
-        "urlRaceData": "https://game.gtimg.cn/images/lol/act/img/tft/js/race.js",
-        "urlJobData": "https://game.gtimg.cn/images/lol/act/img/tft/js/job.js",
-        "urlEquipData": "https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js",
-        "urlBuffData": "https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js"
+        "url_hex_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js"
     },
     "chess": [
         {

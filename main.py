@@ -7,224 +7,271 @@
 种族 race
 职业 job
 """
-
-import requests
-from multiprocessing.dummy import Process
-from multiprocessing import cpu_count
-import threading
-import datetime
-import random
 import os
-from rich.progress import track
 import json
+import datetime
+# 第三方库
+import requests
+from rich.progress import track
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+TFT_RAW_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data/tft_raw_data.json')
+TFT_PROCESSED_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data/tft_processed_data.json')
+TFT_PY_CLASS_FILE = os.path.join(ROOT_DIR, 'tft_data/TFTData.py')
 
-def load_json(filename: str):
+def load_json(filename: str) -> None:
     with open(filename, 'r', encoding='utf-8') as load_f:
         return json.load(load_f)
 
-
-def save_json(data: dict, filename: str):
+def save_json(data: dict, filename: str, indent: int=4) -> None:
     with open(filename, 'w', encoding='utf8') as file_obj:
-        json.dump(data, file_obj, ensure_ascii=False, indent=4)
+        json.dump(data, file_obj, ensure_ascii=False, indent=indent)
 
+class RawDataCollector:
+    """_summary_
+    """
+    def __init__(self) -> None:
+        # 每个requests请求超时时间(秒)
+        self.__time_out: int = 5
 
-class DataCollector:
-    def __init__(self, multi_process=True):
-        self.multi_process = multi_process
-        self.max_num_process = cpu_count()
-        self.version_info_dict = {
-            "赛季名称": "双城之战",
-            "版本信息": "",
-            "赛季信息": "",
-            "软件更新日期": f"{datetime.date.today().year}年{datetime.date.today().month}月{datetime.date.today().day}日"
+        # self.version_info_dict 里的所有信息，包括url
+        # 都会通过代码__get_version_info()更新
+        self.version_config: dict = {
+            "赛季名称": "s8-怪兽来袭",
+            "版本信息": "13.5",
+            "爬取日期": f"{datetime.date.today()}",
+            'url_chess_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js', 
+            'url_race_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/race.js', 
+            'url_job_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/job.js', 
+            'url_equip_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js', 
+            'url_hex_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js'
         }
-        self.data_dict = {"chess": [], "hex": [], "equipment": [], "race": [], "job": []}
+        self.__get_version_info()
+        self.raw_data: dict = {
+            "version_config": self.version_config,
+            # 每一个chess例子（list里套的是字典）
+            # {"chessId":"1", "title":"黑暗之女", "name":"788.png", "displayName":"安妮", "raceIds":"8108,8105", "jobIds":"8014", "price":"2", "skillName":"爆裂护盾", "skillType":"主动", "skillImage":"https://game.gtimg.cn/images/lol/act/img/tft/champions/annie-burst-shield.png", "skillIntroduce":"【安妮】用火焰引爆一个锥形区域，对她前方的敌人造成140/210/325魔法伤害，然后给自己生成300/350/425护盾值，持续4秒。", "skillDetail":"【安妮】用火焰引爆一个锥形区域，对她前方的敌人造成140/210/325魔法伤害，然后给自己生成300/350/425护盾值，持续4秒。", "life":"750", "magic":"90", "startMagic":"30", "armor":"40", "spellBlock":"40", "attackMag":"1.5", "attack":"40", "attackSpeed":"0.6", "attackRange":"2", "crit":"25", "originalImage":"upload/img/champions/annie-burst-shield.png", "lifeMag":"1.8", "TFTID":"788", "synergies":"", "illustrate":"", "recEquip":"559,581,597", "proStatus":"最新", "hero_EN_name":"Annie", "races":"福牛守护者,小天才", "jobs":"灵能使", "attackData":"40/60/90", "lifeData":"750/1350/2430"}
+            "chess": [],
+            # 每一个race例子
+            # {"raceId":"8101", "name":"AI程序", "traitId":"8101", "introduce":"【AI程序】在每局游戏中对每个玩家的配置都不同。", "alias":"8101.png", "level":{"2":"初始化【AI程序】的条件和结果]", "4":"[对程序添加另一个结果]", "6":"前几个层级的加成提升200%"},"TFTID":"8101", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/origins/8101.png", "race_color_list":"2:1,4:2,6:3"}
+            "race": [], 
+            # 每一个job例子
+            # {"jobId":"8001", "name":"精英战士", "traitId":"8001", "introduce":"这个羁绊仅会在你恰好拥有1个或4个独特的【精英战士】弈子时激活。", "alias":"8001.png", "level":{"1":"处决低于15%生命值的敌人", "4":"处决低于30%生命值的敌人"},"TFTID":"8001", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/classes/8001.png", "job_color_list":"1:1,4:3"}
+            "job": [],
+            # 每一个equip例子
+            # {"equipId":"201", "type":"2", "name":"幽梦之灵", "effect":"携带者也是一名刺客", "keywords":"攻击力，转职，暴击", "formula":"301,308", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/equip/201.png", "TFTID":"2001", "jobId":"3", "raceId":"0", "proStatus":"无", "isShow":"0"}
+            "equip": [], 
+            # 每一个hex例子
+            # {"id":"7351", "hexId":"2415", "type":"1", "name":"开摆", "imgUrl":"https://game.gtimg.cn/images/lol/act/img/tft/hex/20220531155500HEX6295c9d41fbf3.PNG", "fetterId":"0", "fetterType":"0", "augments":"TFT7_Augment_AFK", "hero_EN_name":"", "isShow":"1", "hero_enhancement_type":"0", "description":"你在接下来的3回合里无法采取任何行动。在此之后，获得18金币。", "createTime":"2023-03-0815:55:40"}
+            "hex": [], 
+        }
+        self.__collect_raw_data()
 
-        self.__headers = {
+    def __get_version_info(self) -> None:
+        """
+        """
+        # 获取赛季信息
+        url = 'https://lol.qq.com/zmtftzone/public-lib/versionconfig.json'
+        response = requests.get(url, timeout=self.__time_out)
+        res = response.json()[0]
+        # 返回案例，供参考，不使用
+        res_example = {
+            'booleanPreVersion': False, 
+            'arrVersionLimit': ['12.23'], 
+            'stringName': '怪兽来袭', 
+            'idSeason': 's8', 
+            'url_chess_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js', 
+            'url_race_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/race.js', 
+            'url_job_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/job.js', 
+            'url_equip_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js', 
+            'url_hex_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js'
+        }
+        # s8-怪兽来袭
+        self.version_config["赛季名称"] = f"{res['idSeason']}-{res['stringName']}"
+        # 更新url
+        self.version_config["url_chess_data"] = res['urlChessData']
+        self.version_config["url_race_data"] = res['urlRaceData']
+        self.version_config["url_job_data"] = res['urlJobData']
+        self.version_config["url_equip_data"] = res['urlEquipData']
+        self.version_config["url_hex_data"] = res['urlBuffData']
+        # 通过job获取版本信息
+        response = requests.get(self.version_config["url_race_data"], timeout=self.__time_out)
+        # 13.5
+        self.version_config["版本信息"] = response.json()["version"]
+        # self.version_config 更新后结果：
+        # {'赛季名称': 's8-怪兽来袭', '版本信息': '13.5', '爬取日期': '2023-03-14', xxxx(各种url)}
+
+    def __collect_raw_data(self) -> None:
+        """收集raw_data，并保存到 TFT_RAW_DATA_FILE 。
+        """
+        data_list = ['chess', 'race', 'job', 'equip']
+        for data_kind in data_list:
+            url = self.version_config[f'url_{data_kind}_data']
+            response = requests.get(url, timeout=self.__time_out)
+            self.raw_data[data_kind] = response.json()['data']
+        # 'hex'特殊处理
+        response = requests.get(self.version_config['url_hex_data'], timeout=self.__time_out)
+        hex_res = response.json()
+        self.raw_data['hex'] = [hex_res[key] for key in hex_res]
+        # 保存文件
+        save_json(self.raw_data, TFT_RAW_DATA_FILE)
+
+    def save_tft_raw_data(self) -> None:
+        save_json(self.raw_data, TFT_RAW_DATA_FILE)
+
+    def __download_image(self, img_name: str, img_url: str):
+        headers = {
             'authority': 'game.gtimg.cn',
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
         }
-        self.__url_dir = {"chess": 'https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js',
-                          "hex": 'https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js',
-                          "equipment": 'https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js',
-                          "race": 'https://game.gtimg.cn/images/lol/act/img/tft/js/race.js',
-                          "job": 'https://game.gtimg.cn/images/lol/act/img/tft/js/job.js'}
-        requests.packages.urllib3.disable_warnings()
-
-    def use_multi_process(self, option: bool):
-        self.multi_process = option
-
-    def __collect_one_list(self, data_kind: str):
-        """
-        爬取某一种信息，并保存到self.data_dict或self.version_info_dict中
-        在self.collect_all_list()调用
-        """
-        # 如果已经请求过，直接返回
-        if self.data_dict[data_kind]:
-            return self.data_dict[data_kind]
-        # 没有请求过的话，就去请求
-        params = {'v': f'{random.randint(10000, 50000)}'}
-        response = requests.get(self.__url_dir[data_kind], headers=self.__headers, params=params)
-        res = response.json()
-        if data_kind == "hex":
-            res = [res[key] for key in res]
-            self.data_dict[data_kind] = res
-            return res
-        else:
-            self.version_info_dict["版本信息"] = res['version']
-            self.version_info_dict["赛季信息"] = res['season']
-            res = res['data']
-            self.data_dict[data_kind] = res
-            return res
-
-    def collect_all_lists(self):
-        """
-        下载所有的信息，并保存到json和csv文件
-        """
-        for key in self.data_dict:
-            self.data_dict[key] = self.__collect_one_list(data_kind=key)
-            save_json(self.data_dict[key], f'{key}.json')
-        save_json(self.version_info_dict, 'version_info.json')
-        return True
-
-    def __download_one_image_thread(self, img_name: str, img_url: str):
         if os.path.exists(img_name):
             print(f"file_exists: {img_name}")
-            pass
         else:
-            img_resp = requests.get(img_url, headers=self.__headers)
+            img_resp = requests.get(img_url, headers=headers, timeout=self.__time_out)
             if "was not found" in str(img_resp.content):
-                # img_resp = requests.get(img_url, verify=False)
-                img_resp = requests.get(img_url, headers=self.__headers, verify=False)
-            if "was not found" in str(img_resp.content):
-                print(img_url)
-                print(img_resp.content)
+                img_resp = requests.get(img_url, headers=headers,
+                                        timeout=self.__time_out, verify=False)
             with open(img_name, mode="wb") as f:
                 f.write(img_resp.content)
 
-    def __download_image(self, img_name: str, img_url: str):
-        if self.multi_process:
-            while threading.active_count() > self.max_num_process:
-                pass
-            p = Process(target=self.__download_one_image_thread, args=(img_name, img_url))
-            p.start()
-        else:
-            self.__download_one_image_thread(img_name, img_url)
-
-    def download_chess_imgs(self):
-        chess_list = load_json('Database/chess.json')
-        for champion in track(chess_list, description="正在爬取棋子图片"):
-            img_name = f"images/chess{champion['chessId']}.jpg"
-            img_url = f"https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/{champion['TFTID']}.jpg"
+    def download_chess_imgs(self) -> None:
+        print("如果图片有错误，比如版本不对，请将所有图片删除重新下载。")
+        chess_list = self.raw_data['chess']
+        for chess in track(chess_list, description="正在爬取棋子图片"):
+            img_name = f"tft_images/chess/{chess['TFTID']}-{chess['title']}-{chess['displayName']}.jpg"
+            img_name = os.path.join(ROOT_DIR, img_name)
+            img_url = f"https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/{chess['TFTID']}.jpg"
             self.__download_image(img_name, img_url)
 
-    def download_hex_imgs(self):
-        hex_list = load_json('Database/hex.json')
+    def download_skill_imgs(self) -> None:
+        print("如果图片有错误，比如版本不对，请将所有图片删除重新下载。")
+        chess_list = self.raw_data['chess']
+        for chess in track(chess_list, description="正在爬取技能图片"):
+            img_name = f"{chess['TFTID']}-{chess['title']}-{chess['displayName']}-{chess['skillName']}.jpg"
+            img_name = f"tft_images/skill/{img_name}"
+            img_name = os.path.join(ROOT_DIR, img_name)
+            img_url = chess['skillImage']
+            self.__download_image(img_name, img_url)
+
+    def download_hex_imgs(self) -> None:
+        print("如果图片有错误，比如版本不对，请将所有图片删除重新下载。")
+        hex_list = self.raw_data['hex']
         for hex_info in track(hex_list, description="正在爬取海克斯图片"):
-            img_name = f"images/hex{hex_info['hexId']}.png"
+            img_name = f"tft_images/hex/{hex_info['hexId']}-{hex_info['name']}.png"
+            img_name = os.path.join(ROOT_DIR, img_name)
             self.__download_image(img_name, hex_info['imgUrl'])
 
-    def download_equipment_imgs(self):
-        equip_list = load_json('Database/equipment.json')
+    def download_equipment_imgs(self) -> None:
+        print("如果图片有错误，比如版本不对，请将所有图片删除重新下载。")
+        equip_list = self.raw_data['equip']
         for equip in track(equip_list, description="正在爬取装备图片"):
-            img_name = f"images/equipment{equip['equipId']}.png"
+            img_name = f"tft_images/equip/{equip['TFTID']}-{equip['name']}.png"
+            img_name = img_name.replace(" ", "").replace("//", "")
+            img_name = os.path.join(ROOT_DIR, img_name)
             self.__download_image(img_name, equip['imagePath'])
 
-
-def match_race_chess():
-    """
-    将race与chess匹配起来,并保存到race_chess.json文件
-    """
-    race_chess_filename = 'race_chess.json'
-    # race_dict = {'全部种族': []}
-    race_dict = {}
-    race_data = load_json('race.json')
-    chess_data = load_json('chess.json')
-    for race in race_data:
-        # 'raceIds': '9'
-        race_id = race['raceId']
-        race_name = f"{race_id}-{race['name']}"
-        race_dict[race_name] = []
-        for chess in chess_data:
-            race_ids = chess['raceIds'].split(',')
-            if race_id in race_ids:
-                race_dict[race_name].append(f"{chess['chessId']}-{chess['displayName']}")
-                # race_dict['全部种族'].append(f"{chess['chessId']}-{chess['displayName']}")
-    save_json(race_dict, race_chess_filename)
+    def download_all_imgs(self) -> None:
+        self.download_chess_imgs()
+        self.download_skill_imgs()
+        self.download_hex_imgs()
+        self.download_equipment_imgs()
 
 
-def match_job_chess():
-    """
-    将job与chess匹配起来,并保存到job_chess.json文件
-    """
-    job_chess_filename = 'job_chess.json'
-    job_dict = {}
-    job_data = load_json('job.json')
-    chess_data = load_json('chess.json')
-    for job in job_data:
-        job_id = job['jobId']
-        job_name = f"{job['jobId']}-{job['name']}"
-        job_dict[job_name] = []
-        for chess in chess_data:
-            job_ids = chess['jobIds'].split(',')
-            if job_id in job_ids:
-                job_dict[job_name].append(f"{chess['chessId']}-{chess['displayName']}")
-                # job_dict['全部职业'].append(f"{chess['chessId']}-{chess['displayName']}")
-    save_json(job_dict, job_chess_filename)
-
-
-def get_chess_strings():
-    """
-    获得所有的棋子名字,职业,以及种族.
-    组成字符串,方便ocr以后匹配.
-    """
-    chess_name = [f'{chess["displayName"]}' for chess in load_json('chess.json')]
-    race_name = [f'{race["name"]}' for race in load_json('race.json')]
-    job_name = [f'{job["name"]}' for job in load_json('job.json')]
-
-    res = {"chess_name": '-'.join(chess_name),
-           "race_name": '-'.join(race_name),
-           "job_name": '-'.join(job_name)}
-    save_json(res, 'chess_strings.json')
-    return res
-
-
-def get_chess_info():
-    chess = load_json('chess.json')
-    chess_name_info = {}
-    for info in chess:
-        name = info['displayName']
-        chess_name_info[name] = info
-    save_json(chess_name_info, 'chess_name_info.json')
-
-
-def create_database():
-    dc = DataCollector()
-    dc.collect_all_lists()
-    match_race_chess()
-    match_job_chess()
-    get_chess_strings()
-    get_chess_info()
-    res = {'version_info': load_json('version_info.json'),
-           'race_chess': load_json('race_chess.json'),
-           'job_chess': load_json('job_chess.json'),
-           'chess_name_info': load_json('chess_name_info.json'),
-           'chess_strings': load_json('chess_strings.json')}
-    save_json(res, 'Database.json')
-
-
-def create_py_class():
-    js = load_json('Database.json')
-    new_chess_name_info = {}
-    for key in js['chess_name_info']:
-        new_chess_name_info[key] = {
-            "price": js['chess_name_info'][key]["price"],
-            "chessId": js['chess_name_info'][key]["chessId"],
-            "TFTID": js['chess_name_info'][key]["TFTID"]
+class TFTDataProcessor:
+    def __init__(self) -> None:
+        self.raw_data: dict = load_json(TFT_RAW_DATA_FILE)
+        # example of self.raw_data
+        self.__raw_data_example: dict = {
+            "version_config": {},
+            # 每一个chess例子（list里套的是字典）
+            # {"chessId":"1", "title":"黑暗之女", "name":"788.png", "displayName":"安妮", "raceIds":"8108,8105", "jobIds":"8014", "price":"2", "skillName":"爆裂护盾", "skillType":"主动", "skillImage":"https://game.gtimg.cn/images/lol/act/img/tft/champions/annie-burst-shield.png", "skillIntroduce":"【安妮】用火焰引爆一个锥形区域，对她前方的敌人造成140/210/325魔法伤害，然后给自己生成300/350/425护盾值，持续4秒。", "skillDetail":"【安妮】用火焰引爆一个锥形区域，对她前方的敌人造成140/210/325魔法伤害，然后给自己生成300/350/425护盾值，持续4秒。", "life":"750", "magic":"90", "startMagic":"30", "armor":"40", "spellBlock":"40", "attackMag":"1.5", "attack":"40", "attackSpeed":"0.6", "attackRange":"2", "crit":"25", "originalImage":"upload/img/champions/annie-burst-shield.png", "lifeMag":"1.8", "TFTID":"788", "synergies":"", "illustrate":"", "recEquip":"559,581,597", "proStatus":"最新", "hero_EN_name":"Annie", "races":"福牛守护者,小天才", "jobs":"灵能使", "attackData":"40/60/90", "lifeData":"750/1350/2430"}
+            "chess": [],
+            # 每一个race例子
+            # {"raceId":"8101", "name":"AI程序", "traitId":"8101", "introduce":"【AI程序】在每局游戏中对每个玩家的配置都不同。", "alias":"8101.png", "level":{"2":"初始化【AI程序】的条件和结果]", "4":"[对程序添加另一个结果]", "6":"前几个层级的加成提升200%"},"TFTID":"8101", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/origins/8101.png", "race_color_list":"2:1,4:2,6:3"}
+            "race": [], 
+            # 每一个job例子
+            # {"jobId":"8001", "name":"精英战士", "traitId":"8001", "introduce":"这个羁绊仅会在你恰好拥有1个或4个独特的【精英战士】弈子时激活。", "alias":"8001.png", "level":{"1":"处决低于15%生命值的敌人", "4":"处决低于30%生命值的敌人"},"TFTID":"8001", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/classes/8001.png", "job_color_list":"1:1,4:3"}
+            "job": [],
+            # 每一个equip例子
+            # {"equipId":"201", "type":"2", "name":"幽梦之灵", "effect":"携带者也是一名刺客", "keywords":"攻击力，转职，暴击", "formula":"301,308", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/equip/201.png", "TFTID":"2001", "jobId":"3", "raceId":"0", "proStatus":"无", "isShow":"0"}
+            "equip": [], 
+            # 每一个hex例子
+            # {"id":"7351", "hexId":"2415", "type":"1", "name":"开摆", "imgUrl":"https://game.gtimg.cn/images/lol/act/img/tft/hex/20220531155500HEX6295c9d41fbf3.PNG", "fetterId":"0", "fetterType":"0", "augments":"TFT7_Augment_AFK", "hero_EN_name":"", "isShow":"1", "hero_enhancement_type":"0", "description":"你在接下来的3回合里无法采取任何行动。在此之后，获得18金币。", "createTime":"2023-03-0815:55:40"}
+            "hex": [], 
         }
-    js['chess_name_info'] = new_chess_name_info
-    res = f"""
+        self.processed_data: dict = {
+            "all_chess_name": "",
+            "all_race_name": "",
+            "all_job_name": "",
+            "job_chess": {},
+            "race_chess": {},
+            "chess_name_info": {}
+        }
+
+        self.__process_data()
+
+    def __match_job_chess(self) -> None:
+        res = {}
+        job_data = self.raw_data['job']
+        chess_data = self.raw_data['chess']
+        for job in job_data:
+            job_id = job['jobId']
+            job_name = job['name']
+            res[job_name] = []
+            for chess in chess_data:
+                job_ids = chess['jobIds'].split(',')
+                if job_id in job_ids:
+                    res[job_name].append(chess['displayName'])
+        self.processed_data["job_chess"] = res
+
+    def __match_race_chess(self) -> None:
+        res = {}
+        race_data = self.raw_data['race']
+        chess_data = self.raw_data['chess']
+        for race in race_data:
+            race_id = race['raceId']
+            race_name = race['name']
+            res[race_name] = []
+            for chess in chess_data:
+                race_ids = chess['raceIds'].split(',')
+                if race_id in race_ids:
+                    res[race_name].append(chess['displayName'])
+        self.processed_data["race_chess"] = res
+
+    def __parse_all_strings(self) -> None:
+        """
+        获得所有的棋子名字,职业,以及种族.
+        组成字符串,方便ocr以后匹配.
+        """
+        chess_name = [f'{chess["displayName"]}' for chess in self.raw_data['chess']]
+        race_name = [f'{race["name"]}' for race in self.raw_data['race']]
+        job_name = [f'{job["name"]}' for job in self.raw_data['job']]
+        
+        self.processed_data["all_chess_name"] = '-'.join(chess_name)
+        self.processed_data["all_race_name"] = '-'.join(race_name)
+        self.processed_data["all_job_name"] = '-'.join(job_name)
+
+    def __parse_chess_name_info(self) -> None:
+        chess = self.raw_data['chess']
+        res = {}
+        for info in chess:
+            name = info['displayName']
+            res[name] = info
+        self.processed_data["chess_name_info"] = res
+
+    def __process_data(self) -> None:
+        self.__match_job_chess()
+        self.__match_race_chess()
+        self.__parse_all_strings()
+        self.__parse_chess_name_info()
+        save_json(self.processed_data, TFT_PROCESSED_DATA_FILE)
+   
+    def save_tft_processed_data(self) -> None:
+        save_json(self.processed_data, TFT_PROCESSED_DATA_FILE)
+
+
+    def save_py_class(self) -> None:
+        res = f"""
 class TFTData:
     _instance = None
     _is_first_init = True
@@ -238,25 +285,30 @@ class TFTData:
         if not self._is_first_init:
             return
         self._is_first_init = False
-        self.version_info = {js['version_info']}
-        self.race_chess = {js['race_chess']}
-        self.job_chess = {js['job_chess']}
-        self.chess_name_info = {js['chess_name_info']}
-        self.all_chess_name_str = "{js['chess_strings']['chess_name']}"
-        self.all_race_name_str = "{js['chess_strings']['race_name']}"
-        self.all_job_name_str = "{js['chess_strings']['job_name']}"
+        self.version_config = {self.raw_data['version_config']}
+        self.race_chess = {self.processed_data['race_chess']}
+        self.job_chess = {self.processed_data['job_chess']}
+        self.chess_name_info = {self.processed_data['chess_name_info']}
+        self.all_chess_name_str = "{self.processed_data['all_chess_name']}"
+        self.all_race_name_str = "{self.processed_data['all_race_name']}"
+        self.all_job_name_str = "{self.processed_data['all_job_name']}"
 """
-    with open('TFTData.py', 'w', encoding='utf-8') as f:
-        f.writelines(res)
+        with open(TFT_PY_CLASS_FILE, 'w', encoding='utf-8') as f:
+            f.writelines(res)
 
- 
+
+
 if __name__ == '__main__':
-    dc = DataCollector()
-    
-    
-    dc.collect_all_lists()
-    create_database()
-    create_py_class()
-    # # 这里我们只下载chess_imgs就可以,其他的目前不需要
-    # # 如果下载失败,多跑几次就下载下来了
-    dc.download_chess_imgs()
+    # # 下载官方的raw数据
+    # rdc = RawDataCollector()
+    # # 保存爬取的信息到 TFT_RAW_DATA_FILE = 'tft_raw_data.json'
+    # rdc.save_tft_raw_data()
+    # # 下载图片
+    # rdc.download_all_imgs()
+
+    # 作者根据自己的需求对数据进行了处理和汇总
+    tdp = TFTDataProcessor()
+    # 处理好的数据保存到 TFT_PROCESSED_DATA_FILE = 'tft_processed_data.json'
+    tdp.save_tft_processed_data()
+    # 保存一份TFTData.py的Singleton，方便作者自己调用。
+    tdp.save_py_class()
