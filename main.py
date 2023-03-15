@@ -283,12 +283,12 @@ class TFTDataProcessor:
             return
         self._is_first_init = False
         self.version_config = {self.raw_data['version_config']}
-        self.race_chess = {self.processed_data['race_chess']}
-        self.job_chess = {self.processed_data['job_chess']}
-        self.chess_name_info = {self.processed_data['chess_name_info']}
         self.all_chess_name_str = "{self.processed_data['all_chess_name']}"
         self.all_race_name_str = "{self.processed_data['all_race_name']}"
         self.all_job_name_str = "{self.processed_data['all_job_name']}"
+        self.race_chess = {self.processed_data['race_chess']}
+        self.job_chess = {self.processed_data['job_chess']}
+        self.chess_name_info = {self.processed_data['chess_name_info']}
 """
 
         # 有些英雄名字字符ocr不支持，比如：chars in candidates are not in the vocab, ignoring them: {'菈'}
