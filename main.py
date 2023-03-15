@@ -269,8 +269,7 @@ class TFTDataProcessor:
 
 
     def save_py_class(self) -> None:
-        res = f"""
-class TFTData:
+        res = f"""class TFTData:
     _instance = None
     _is_first_init = True
 
@@ -291,6 +290,16 @@ class TFTData:
         self.all_race_name_str = "{self.processed_data['all_race_name']}"
         self.all_job_name_str = "{self.processed_data['all_job_name']}"
 """
+
+        # 有些英雄名字字符ocr不支持，比如：chars in candidates are not in the vocab, ignoring them: {'菈'}
+        # 因此在测试后将其替换成识别出来的文字
+        replace_dict = {
+            '菈': '拉',
+        }
+
+        for key in replace_dict:
+            res = res.replace(key, replace_dict[key])
+
         with open(TFT_PY_CLASS_FILE, 'w', encoding='utf-8') as f:
             f.writelines(res)
 
