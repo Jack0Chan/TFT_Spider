@@ -2,7 +2,7 @@
     "version_config": {
         "赛季名称": "s8-怪兽来袭",
         "版本信息": "13.5",
-        "爬取日期": "2023-03-15",
+        "爬取日期": "2023-03-17",
         "url_chess_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js",
         "url_race_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/race.js",
         "url_job_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/job.js",
@@ -2665,7 +2665,8 @@
             "jobId": "3",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "202",
@@ -2679,7 +2680,8 @@
             "jobId": "1",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "203",
@@ -2693,7 +2695,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "204",
@@ -2707,7 +2710,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "205",
@@ -2721,7 +2725,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "206",
@@ -2735,7 +2740,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "207",
@@ -2749,7 +2755,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "208",
@@ -2763,7 +2770,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "209",
@@ -2777,7 +2785,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "210",
@@ -2791,7 +2800,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "211",
@@ -2805,7 +2815,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "212",
@@ -2819,7 +2830,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "310",
@@ -2833,7 +2845,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "削弱",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_Deathblade"
         },
         {
             "equipId": "311",
@@ -2847,7 +2860,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_MadredsBloodrazor"
         },
         {
             "equipId": "312",
@@ -2861,7 +2875,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "313",
@@ -2875,7 +2890,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_SpearOfShojin"
         },
         {
             "equipId": "314",
@@ -2889,7 +2905,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFTTutorial_Item_GuardianAngel"
         },
         {
             "equipId": "315",
@@ -2903,7 +2920,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_Bloodthirster"
         },
         {
             "equipId": "316",
@@ -2917,7 +2935,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_ZekesHerald"
         },
         {
             "equipId": "317",
@@ -2931,7 +2950,8 @@
             "jobId": "1",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "318",
@@ -2945,7 +2965,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_InfinityEdge"
         },
         {
             "equipId": "319",
@@ -2959,7 +2980,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_RapidFireCannon"
         },
         {
             "equipId": "320",
@@ -2973,7 +2995,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_GuinsoosRageblade"
         },
         {
             "equipId": "321",
@@ -2987,7 +3010,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_StatikkShiv"
         },
         {
             "equipId": "322",
@@ -3001,7 +3025,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_RunaansHurricane"
         },
         {
             "equipId": "323",
@@ -3015,7 +3040,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_TitanicHydra"
         },
         {
             "equipId": "324",
@@ -3029,7 +3055,8 @@
             "jobId": "3",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "325",
@@ -3043,7 +3070,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_LastWhisper"
         },
         {
             "equipId": "326",
@@ -3057,7 +3085,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_RabadonsDeathcap"
         },
         {
             "equipId": "327",
@@ -3071,7 +3100,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "328",
@@ -3085,7 +3115,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "削弱",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_LocketOfTheIronSolari"
         },
         {
             "equipId": "329",
@@ -3099,7 +3130,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_IonicSpark"
         },
         {
             "equipId": "330",
@@ -3113,7 +3145,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_Morellonomicon"
         },
         {
             "equipId": "331",
@@ -3127,7 +3160,8 @@
             "jobId": "2",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "332",
@@ -3141,7 +3175,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_JeweledGauntlet"
         },
         {
             "equipId": "333",
@@ -3155,7 +3190,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "334",
@@ -3169,7 +3205,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "335",
@@ -3183,7 +3220,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_Chalice"
         },
         {
             "equipId": "336",
@@ -3197,7 +3235,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_Redemption"
         },
         {
             "equipId": "337",
@@ -3211,7 +3250,8 @@
             "jobId": "0",
             "raceId": "1",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "338",
@@ -3225,7 +3265,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_UnstableConcoction"
         },
         {
             "equipId": "339",
@@ -3239,7 +3280,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_BrambleVest"
         },
         {
             "equipId": "340",
@@ -3253,7 +3295,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "341",
@@ -3267,7 +3310,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "342",
@@ -3281,7 +3325,8 @@
             "jobId": "0",
             "raceId": "4",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "343",
@@ -3295,7 +3340,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_Shroud"
         },
         {
             "equipId": "344",
@@ -3309,7 +3355,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_DragonsClaw"
         },
         {
             "equipId": "345",
@@ -3323,7 +3370,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_Zephyr"
         },
         {
             "equipId": "346",
@@ -3337,7 +3385,8 @@
             "jobId": "0",
             "raceId": "3",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "347",
@@ -3351,7 +3400,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_Quicksilver"
         },
         {
             "equipId": "348",
@@ -3365,7 +3415,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_WarmogsArmor"
         },
         {
             "equipId": "349",
@@ -3379,7 +3430,8 @@
             "jobId": "6",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "350",
@@ -3393,7 +3445,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "增强",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "351",
@@ -3407,7 +3460,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "352",
@@ -3421,7 +3475,8 @@
             "jobId": "0",
             "raceId": "9",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "353",
@@ -3435,7 +3490,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_ThiefsGloves"
         },
         {
             "equipId": "354",
@@ -3449,7 +3505,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_TitansResolve"
         },
         {
             "equipId": "355",
@@ -3463,7 +3520,8 @@
             "jobId": "0",
             "raceId": "11",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "356",
@@ -3477,7 +3535,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFTTutorial_Item_BlueBuff,TFT_Item_SeraphsEmbrace"
         },
         {
             "equipId": "401",
@@ -3491,7 +3550,8 @@
             "jobId": "0",
             "raceId": "2",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "402",
@@ -3505,7 +3565,8 @@
             "jobId": "5",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "403",
@@ -3519,7 +3580,8 @@
             "jobId": "0",
             "raceId": "3",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "404",
@@ -3533,7 +3595,8 @@
             "jobId": "8",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "405",
@@ -3547,7 +3610,8 @@
             "jobId": "12",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "406",
@@ -3561,7 +3625,8 @@
             "jobId": "0",
             "raceId": "4",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "407",
@@ -3575,7 +3640,8 @@
             "jobId": "0",
             "raceId": "12",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "408",
@@ -3589,7 +3655,8 @@
             "jobId": "2",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "409",
@@ -3603,7 +3670,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_RedBuff"
         },
         {
             "equipId": "410",
@@ -3617,7 +3685,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "增强",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT_Item_GargoyleStoneplate"
         },
         {
             "equipId": "411",
@@ -3631,7 +3700,8 @@
             "jobId": "0",
             "raceId": "14",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "412",
@@ -3645,7 +3715,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnAnimaVisage"
         },
         {
             "equipId": "413",
@@ -3659,7 +3730,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnDeathsDefiance"
         },
         {
             "equipId": "414",
@@ -3673,7 +3745,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnMuramana"
         },
         {
             "equipId": "415",
@@ -3687,7 +3760,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnInfinityForce"
         },
         {
             "equipId": "416",
@@ -3701,7 +3775,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnEternalWinter"
         },
         {
             "equipId": "417",
@@ -3715,7 +3790,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnObsidianCleaver"
         },
         {
             "equipId": "418",
@@ -3729,7 +3805,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnRanduinsSanctum"
         },
         {
             "equipId": "419",
@@ -3743,7 +3820,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnRocketPropelledFist"
         },
         {
             "equipId": "420",
@@ -3757,7 +3835,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnTheCollector"
         },
         {
             "equipId": "421",
@@ -3771,7 +3850,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT4_Item_OrnnZhonyasParadox"
         },
         {
             "equipId": "501",
@@ -3785,7 +3865,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFTTutorial_Item_BFSword,TFT_Item_BFSword"
         },
         {
             "equipId": "502",
@@ -3799,7 +3880,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_RecurveBow"
         },
         {
             "equipId": "503",
@@ -3813,7 +3895,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_NeedlesslyLargeRod"
         },
         {
             "equipId": "504",
@@ -3827,7 +3910,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_TearOfTheGoddess"
         },
         {
             "equipId": "505",
@@ -3841,7 +3925,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFTTutorial_Item_ChainVest,TFT_Item_ChainVest"
         },
         {
             "equipId": "506",
@@ -3855,7 +3940,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_NegatronCloak"
         },
         {
             "equipId": "507",
@@ -3869,7 +3955,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_GiantsBelt"
         },
         {
             "equipId": "508",
@@ -3883,7 +3970,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Spatula"
         },
         {
             "equipId": "509",
@@ -3897,7 +3985,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_SparringGloves"
         },
         {
             "equipId": "510",
@@ -3911,7 +4000,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "511",
@@ -3925,7 +4015,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "512",
@@ -3939,7 +4030,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "513",
@@ -3953,7 +4045,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "514",
@@ -3967,7 +4060,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "515",
@@ -3981,7 +4075,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "516",
@@ -3995,7 +4090,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "517",
@@ -4009,7 +4105,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "518",
@@ -4023,7 +4120,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "519",
@@ -4037,7 +4135,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Deathblade"
         },
         {
             "equipId": "520",
@@ -4051,7 +4150,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "521",
@@ -4065,7 +4165,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_MadredsBloodrazor"
         },
         {
             "equipId": "522",
@@ -4079,7 +4180,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "523",
@@ -4093,7 +4195,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_HextechGunblade"
         },
         {
             "equipId": "524",
@@ -4107,7 +4210,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "525",
@@ -4121,7 +4225,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_SpearOfShojin"
         },
         {
             "equipId": "526",
@@ -4135,7 +4240,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "528",
@@ -4149,7 +4255,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "529",
@@ -4163,7 +4270,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Bloodthirster"
         },
         {
             "equipId": "530",
@@ -4177,7 +4285,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "531",
@@ -4191,7 +4300,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_ZekesHerald"
         },
         {
             "equipId": "532",
@@ -4205,7 +4315,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "533",
@@ -4219,7 +4330,8 @@
             "jobId": "9",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "534",
@@ -4233,7 +4345,8 @@
             "jobId": "0",
             "raceId": "1",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "535",
@@ -4247,7 +4360,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_InfinityEdge"
         },
         {
             "equipId": "536",
@@ -4261,7 +4375,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "537",
@@ -4275,7 +4390,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_RapidFireCannon"
         },
         {
             "equipId": "538",
@@ -4289,7 +4405,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "539",
@@ -4303,7 +4420,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_GuinsoosRageblade"
         },
         {
             "equipId": "540",
@@ -4317,7 +4435,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "541",
@@ -4331,7 +4450,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_StatikkShiv"
         },
         {
             "equipId": "542",
@@ -4345,7 +4465,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "543",
@@ -4359,7 +4480,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_TitansResolve"
         },
         {
             "equipId": "544",
@@ -4373,7 +4495,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "545",
@@ -4387,7 +4510,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_RunaansHurricane"
         },
         {
             "equipId": "546",
@@ -4401,7 +4525,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "547",
@@ -4415,7 +4540,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_TitanicHydra"
         },
         {
             "equipId": "548",
@@ -4429,7 +4555,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "549",
@@ -4443,7 +4570,8 @@
             "jobId": "4",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "550",
@@ -4457,7 +4585,8 @@
             "jobId": "0",
             "raceId": "4",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "551",
@@ -4471,7 +4600,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_LastWhisper"
         },
         {
             "equipId": "552",
@@ -4485,7 +4615,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "553",
@@ -4499,7 +4630,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_RabadonsDeathcap"
         },
         {
             "equipId": "554",
@@ -4513,7 +4645,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "555",
@@ -4527,7 +4660,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_ArchangelsStaff"
         },
         {
             "equipId": "556",
@@ -4541,7 +4675,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "557",
@@ -4555,7 +4690,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_LocketOfTheIronSolari"
         },
         {
             "equipId": "558",
@@ -4569,7 +4705,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "559",
@@ -4583,7 +4720,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "削弱",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_IonicSpark"
         },
         {
             "equipId": "560",
@@ -4597,7 +4735,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "561",
@@ -4611,7 +4750,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "削弱",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Morellonomicon"
         },
         {
             "equipId": "562",
@@ -4625,7 +4765,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "563",
@@ -4639,7 +4780,8 @@
             "jobId": "8",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "564",
@@ -4653,7 +4795,8 @@
             "jobId": "0",
             "raceId": "5",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "565",
@@ -4667,7 +4810,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_JeweledGauntlet"
         },
         {
             "equipId": "566",
@@ -4681,7 +4825,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "567",
@@ -4695,7 +4840,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFTTutorial_Item_BlueBuff,TFT_Item_SeraphsEmbrace"
         },
         {
             "equipId": "568",
@@ -4709,7 +4855,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "569",
@@ -4723,7 +4870,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "增强",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "570",
@@ -4737,7 +4885,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "571",
@@ -4751,7 +4900,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Chalice"
         },
         {
             "equipId": "572",
@@ -4765,7 +4915,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "573",
@@ -4779,7 +4930,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Redemption"
         },
         {
             "equipId": "574",
@@ -4793,7 +4945,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "575",
@@ -4807,7 +4960,8 @@
             "jobId": "5",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "576",
@@ -4821,7 +4975,8 @@
             "jobId": "0",
             "raceId": "3",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "577",
@@ -4835,7 +4990,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_UnstableConcoction"
         },
         {
             "equipId": "578",
@@ -4849,7 +5005,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "579",
@@ -4863,7 +5020,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_BrambleVest"
         },
         {
             "equipId": "580",
@@ -4877,7 +5035,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "581",
@@ -4891,7 +5050,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "削弱",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_GargoyleStoneplate"
         },
         {
             "equipId": "582",
@@ -4905,7 +5065,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "583",
@@ -4919,7 +5080,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "584",
@@ -4933,7 +5095,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "585",
@@ -4947,7 +5110,8 @@
             "jobId": "0",
             "raceId": "11",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "586",
@@ -4961,7 +5125,8 @@
             "jobId": "11",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "587",
@@ -4975,7 +5140,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Shroud"
         },
         {
             "equipId": "588",
@@ -4989,7 +5155,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "589",
@@ -5003,7 +5170,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_DragonsClaw"
         },
         {
             "equipId": "590",
@@ -5017,7 +5185,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "591",
@@ -5031,7 +5200,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Zephyr"
         },
         {
             "equipId": "592",
@@ -5045,7 +5215,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "593",
@@ -5059,7 +5230,8 @@
             "jobId": "0",
             "raceId": "7",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "594",
@@ -5073,7 +5245,8 @@
             "jobId": "0",
             "raceId": "13",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "595",
@@ -5087,7 +5260,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "增强",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_Quicksilver"
         },
         {
             "equipId": "596",
@@ -5101,7 +5275,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "597",
@@ -5115,7 +5290,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_WarmogsArmor"
         },
         {
             "equipId": "598",
@@ -5129,7 +5305,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "599",
@@ -5143,7 +5320,8 @@
             "jobId": "0",
             "raceId": "8",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "600",
@@ -5157,7 +5335,8 @@
             "jobId": "0",
             "raceId": "2",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "601",
@@ -5171,7 +5350,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "602",
@@ -5185,7 +5365,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "603",
@@ -5199,7 +5380,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_ForceOfNature"
         },
         {
             "equipId": "604",
@@ -5213,7 +5395,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "605",
@@ -5227,7 +5410,8 @@
             "jobId": "1",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "606",
@@ -5241,7 +5425,8 @@
             "jobId": "0",
             "raceId": "6",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "607",
@@ -5255,7 +5440,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_ThiefsGloves"
         },
         {
             "equipId": "608",
@@ -5269,7 +5455,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "609",
@@ -5283,7 +5470,8 @@
             "jobId": "2",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "610",
@@ -5297,7 +5485,8 @@
             "jobId": "3",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT8_Item_BrawlerEmblemItem"
         },
         {
             "equipId": "611",
@@ -5311,7 +5500,8 @@
             "jobId": "0",
             "raceId": "10",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "612",
@@ -5325,7 +5515,8 @@
             "jobId": "15",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "613",
@@ -5339,7 +5530,8 @@
             "jobId": "10",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "614",
@@ -5353,7 +5545,8 @@
             "jobId": "0",
             "raceId": "14",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "615",
@@ -5367,7 +5560,8 @@
             "jobId": "7",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "616",
@@ -5381,7 +5575,8 @@
             "jobId": "6",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "617",
@@ -5395,7 +5590,8 @@
             "jobId": "0",
             "raceId": "1",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "618",
@@ -5409,7 +5605,8 @@
             "jobId": "0",
             "raceId": "13",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "619",
@@ -5423,7 +5620,8 @@
             "jobId": "0",
             "raceId": "2",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "620",
@@ -5437,7 +5635,8 @@
             "jobId": "0",
             "raceId": "6",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "621",
@@ -5451,7 +5650,8 @@
             "jobId": "4",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "622",
@@ -5465,7 +5665,8 @@
             "jobId": "0",
             "raceId": "11",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "623",
@@ -5479,7 +5680,8 @@
             "jobId": "0",
             "raceId": "4",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "624",
@@ -5493,7 +5695,8 @@
             "jobId": "11",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "801",
@@ -5507,7 +5710,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_PowerGauntlet"
         },
         {
             "equipId": "803",
@@ -5521,7 +5725,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_TrapClawRadiant"
         },
         {
             "equipId": "2045",
@@ -5535,7 +5740,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_FrozenHeartRadiant"
         },
         {
             "equipId": "5001",
@@ -5549,7 +5755,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_DeathbladeRadiant"
         },
         {
             "equipId": "5002",
@@ -5563,7 +5770,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "5003",
@@ -5577,7 +5785,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_HextechGunbladeRadiant"
         },
         {
             "equipId": "5004",
@@ -5591,7 +5800,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "5005",
@@ -5605,7 +5815,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_GuardianAngelRadiant"
         },
         {
             "equipId": "5006",
@@ -5619,7 +5830,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_BloodthirsterRadiant"
         },
         {
             "equipId": "5007",
@@ -5633,7 +5845,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_ZekesHeraldRadiant"
         },
         {
             "equipId": "5008",
@@ -5647,7 +5860,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_InfinityEdgeRadiant"
         },
         {
             "equipId": "5009",
@@ -5661,7 +5875,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_RapidFirecannonRadiant"
         },
         {
             "equipId": "5010",
@@ -5675,7 +5890,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_GuinsoosRagebladeRadiant"
         },
         {
             "equipId": "5011",
@@ -5689,7 +5905,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_StatikkShivRadiant"
         },
         {
             "equipId": "5012",
@@ -5703,7 +5920,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_TitansResolveRadiant"
         },
         {
             "equipId": "5013",
@@ -5717,7 +5935,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "5014",
@@ -5731,7 +5950,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_ZzRotPortalRadiant"
         },
         {
             "equipId": "5015",
@@ -5745,7 +5965,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_LastWhisperRadiant"
         },
         {
             "equipId": "5016",
@@ -5759,7 +5980,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_RabadonsDeathcapRadiant"
         },
         {
             "equipId": "5017",
@@ -5773,7 +5995,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_ArchangelsStaffRadiant"
         },
         {
             "equipId": "5018",
@@ -5787,7 +6010,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_LocketOfTheIronSolariRadiant"
         },
         {
             "equipId": "5019",
@@ -5801,7 +6025,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_IonicSparkRadiant"
         },
         {
             "equipId": "5020",
@@ -5815,7 +6040,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_MorellonomiconRadiant"
         },
         {
             "equipId": "5021",
@@ -5829,7 +6055,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_JeweledGauntletRadiant"
         },
         {
             "equipId": "5022",
@@ -5843,7 +6070,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_BlueBuffRadiant"
         },
         {
             "equipId": "5023",
@@ -5857,7 +6085,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "5024",
@@ -5871,7 +6100,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_ChaliceOfPowerRadiant"
         },
         {
             "equipId": "5025",
@@ -5885,7 +6115,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "5026",
@@ -5899,7 +6130,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_HandOfJusticeRadiant"
         },
         {
             "equipId": "5027",
@@ -5913,7 +6145,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_BrambleVestRadiant"
         },
         {
             "equipId": "5028",
@@ -5927,7 +6160,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_GargoyleStoneplateRadiant"
         },
         {
             "equipId": "5029",
@@ -5941,7 +6175,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_SunfireCapeRadiant"
         },
         {
             "equipId": "5030",
@@ -5955,7 +6190,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_ShroudOfStillnessRadiant"
         },
         {
             "equipId": "5031",
@@ -5969,7 +6205,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_DragonsClawRadiant"
         },
         {
             "equipId": "5032",
@@ -5983,7 +6220,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_ZephyrRadiant"
         },
         {
             "equipId": "5033",
@@ -5997,7 +6235,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_QuicksilverRadiant"
         },
         {
             "equipId": "5034",
@@ -6011,7 +6250,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "5036",
@@ -6025,7 +6265,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT5_Item_ThiefsGlovesRadiant"
         },
         {
             "equipId": "6001",
@@ -6039,7 +6280,8 @@
             "jobId": "0",
             "raceId": "6",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6002",
@@ -6053,7 +6295,8 @@
             "jobId": "6",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6003",
@@ -6067,7 +6310,8 @@
             "jobId": "1",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6004",
@@ -6081,7 +6325,8 @@
             "jobId": "0",
             "raceId": "1",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6005",
@@ -6095,7 +6340,8 @@
             "jobId": "0",
             "raceId": "10",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6006",
@@ -6109,7 +6355,8 @@
             "jobId": "0",
             "raceId": "5",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6007",
@@ -6123,7 +6370,8 @@
             "jobId": "0",
             "raceId": "2",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6008",
@@ -6137,7 +6385,8 @@
             "jobId": "2",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6011",
@@ -6151,7 +6400,8 @@
             "jobId": "4",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6012",
@@ -6165,7 +6415,8 @@
             "jobId": "3",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6013",
@@ -6179,7 +6430,8 @@
             "jobId": "0",
             "raceId": "3",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6014",
@@ -6193,7 +6445,8 @@
             "jobId": "0",
             "raceId": "4",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6015",
@@ -6207,7 +6460,8 @@
             "jobId": "8",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6016",
@@ -6221,7 +6475,8 @@
             "jobId": "0",
             "raceId": "7",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6017",
@@ -6235,7 +6490,8 @@
             "jobId": "9",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6018",
@@ -6249,7 +6505,8 @@
             "jobId": "10",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6019",
@@ -6263,7 +6520,8 @@
             "jobId": "0",
             "raceId": "8",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6020",
@@ -6277,7 +6535,8 @@
             "jobId": "0",
             "raceId": "9",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6021",
@@ -6291,7 +6550,8 @@
             "jobId": "11",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6022",
@@ -6305,7 +6565,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_GuardianAngel"
         },
         {
             "equipId": "6023",
@@ -6319,7 +6580,8 @@
             "jobId": "14",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6024",
@@ -6333,7 +6595,8 @@
             "jobId": "0",
             "raceId": "16",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "6025",
@@ -6347,7 +6610,8 @@
             "jobId": "0",
             "raceId": "17",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7001",
@@ -6361,7 +6625,8 @@
             "jobId": "0",
             "raceId": "7109",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7002",
@@ -6375,7 +6640,8 @@
             "jobId": "0",
             "raceId": "7106",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7003",
@@ -6389,7 +6655,8 @@
             "jobId": "7006",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7004",
@@ -6403,7 +6670,8 @@
             "jobId": "7010",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7005",
@@ -6417,7 +6685,8 @@
             "jobId": "7005",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7006",
@@ -6431,7 +6700,8 @@
             "jobId": "0",
             "raceId": "7105",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7007",
@@ -6445,7 +6715,8 @@
             "jobId": "7008",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT8_Item_DefenderEmblemItem"
         },
         {
             "equipId": "7008",
@@ -6459,7 +6730,8 @@
             "jobId": "7001",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7009",
@@ -6473,7 +6745,8 @@
             "jobId": "0",
             "raceId": "7108",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7010",
@@ -6487,7 +6760,8 @@
             "jobId": "7004",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7011",
@@ -6501,7 +6775,8 @@
             "jobId": "0",
             "raceId": "7114",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7012",
@@ -6515,7 +6790,8 @@
             "jobId": "7014",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7013",
@@ -6529,7 +6805,8 @@
             "jobId": "0",
             "raceId": "7112",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7014",
@@ -6543,7 +6820,8 @@
             "jobId": "7011",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7017",
@@ -6557,7 +6835,8 @@
             "jobId": "7007",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7018",
@@ -6571,7 +6850,8 @@
             "jobId": "0",
             "raceId": "7103",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7019",
@@ -6585,7 +6865,8 @@
             "jobId": "0",
             "raceId": "7104",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7020",
@@ -6599,7 +6880,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7022",
@@ -6613,7 +6895,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT7_Item_ShimmerscaleMogulsMail"
         },
         {
             "equipId": "7023",
@@ -6627,7 +6910,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT7_Item_ShimmerscaleDravensAxe"
         },
         {
             "equipId": "7024",
@@ -6641,7 +6925,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT7_Item_ShimmerscaleHeartOfGold"
         },
         {
             "equipId": "7025",
@@ -6655,7 +6940,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT7_Item_ShimmerscaleGoldmancersStaff"
         },
         {
             "equipId": "7026",
@@ -6669,7 +6955,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT7_Item_ShimmerscaleGamblersBlade"
         },
         {
             "equipId": "7027",
@@ -6683,7 +6970,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT7_Item_ShimmerscaleDeterminedInvestor"
         },
         {
             "equipId": "7028",
@@ -6697,7 +6985,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT7_Item_ShimmerscaleDiamondHands"
         },
         {
             "equipId": "7029",
@@ -6711,7 +7000,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7030",
@@ -6725,7 +7015,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7031",
@@ -6739,7 +7030,8 @@
             "jobId": "7003",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7033",
@@ -6753,7 +7045,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7034",
@@ -6767,7 +7060,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT_Item_FrozenHeart"
         },
         {
             "equipId": "7036",
@@ -6781,7 +7075,8 @@
             "jobId": "0",
             "raceId": "7116",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7038",
@@ -6795,7 +7090,8 @@
             "jobId": "0",
             "raceId": "7115",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "7039",
@@ -6809,7 +7105,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "7040",
@@ -6823,7 +7120,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "最新",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "8000",
@@ -6837,7 +7135,8 @@
             "jobId": "0",
             "raceId": "8102",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_AnimaSquadEmblemItem"
         },
         {
             "equipId": "8001",
@@ -6848,10 +7147,11 @@
             "formula": "",
             "imagePath": "https://game.gtimg.cn/images/lol/act/img/tft/equip/75_8001.png",
             "TFTID": "8001",
-            "jobId": "0",
-            "raceId": "8103",
+            "jobId": null,
+            "raceId": null,
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "0",
+            "englishName": "TFT8_Item_CivilianEmblemItem"
         },
         {
             "equipId": "8002",
@@ -6865,7 +7165,8 @@
             "jobId": "0",
             "raceId": "8109",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_StarGuardianEmblemItem"
         },
         {
             "equipId": "8003",
@@ -6879,7 +7180,8 @@
             "jobId": "0",
             "raceId": "8106",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_InterPolarisEmblemItem"
         },
         {
             "equipId": "8004",
@@ -6893,7 +7195,8 @@
             "jobId": "0",
             "raceId": "8108",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_OxForceEmblemItem"
         },
         {
             "equipId": "8005",
@@ -6907,7 +7210,8 @@
             "jobId": "0",
             "raceId": "8112",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_UndergroundTheEmblemItem"
         },
         {
             "equipId": "8006",
@@ -6921,7 +7225,8 @@
             "jobId": "0",
             "raceId": "8105",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_GenAEEmblemItem"
         },
         {
             "equipId": "8007",
@@ -6935,7 +7240,8 @@
             "jobId": "0",
             "raceId": "8101",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Augment_ADMINEmblem"
         },
         {
             "equipId": "8008",
@@ -6949,7 +7255,8 @@
             "jobId": "8010",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_MascotEmblemItem"
         },
         {
             "equipId": "8009",
@@ -6963,7 +7270,8 @@
             "jobId": "8005",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_DefenderEmblemItem"
         },
         {
             "equipId": "8010",
@@ -6977,7 +7285,8 @@
             "jobId": "8012",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": " "
         },
         {
             "equipId": "8011",
@@ -6991,7 +7300,8 @@
             "jobId": "8014",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT8_Item_ChannelerEmblemItem"
         },
         {
             "equipId": "8012",
@@ -7005,7 +7315,8 @@
             "jobId": "8013",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_RenegadeEmblemItem"
         },
         {
             "equipId": "8013",
@@ -7019,7 +7330,8 @@
             "jobId": "8004",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_BrawlerEmblemItem"
         },
         {
             "equipId": "8014",
@@ -7033,7 +7345,8 @@
             "jobId": "8006",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_DuelistEmblemItem"
         },
         {
             "equipId": "8015",
@@ -7047,7 +7360,8 @@
             "jobId": "8008",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "0"
+            "isShow": "0",
+            "englishName": "TFT8_Item_HackerEmblemItem"
         },
         {
             "equipId": "8016",
@@ -7061,7 +7375,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_HeartEmblemItem"
         },
         {
             "equipId": "8017",
@@ -7075,7 +7390,8 @@
             "jobId": "8011",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_PranksterEmblemItem"
         },
         {
             "equipId": "8018",
@@ -7089,7 +7405,8 @@
             "jobId": "8015",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "8020",
@@ -7103,7 +7420,8 @@
             "jobId": "0",
             "raceId": "8107",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_ExoPrimeEmblemItem"
         },
         {
             "equipId": "8021",
@@ -7117,7 +7435,8 @@
             "jobId": "8001",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_AceEmblemItem"
         },
         {
             "equipId": "8022",
@@ -7131,7 +7450,8 @@
             "jobId": "0",
             "raceId": "8114",
             "proStatus": "即将到来",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_InfiniteamEmblemItem"
         },
         {
             "equipId": "8047",
@@ -7145,7 +7465,23 @@
             "jobId": "8002",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_AegisEmblemItem"
+        },
+        {
+            "equipId": "8051",
+            "type": "4",
+            "name": "至高天纹章",
+            "effect": "携带者获得【至高天】羁绊。\n[唯一 - 每个英雄仅可装备一件]",
+            "keywords": "转职，至高天",
+            "formula": "",
+            "imagePath": "https://game.gtimg.cn/images/lol/act/img/tft/equip/riftwalker.tft_set8_stage2.png",
+            "TFTID": "8051",
+            "jobId": "0",
+            "raceId": "8113",
+            "proStatus": "即将到来",
+            "isShow": "1",
+            "englishName": "TFT8_Item_RiftwalkerEmblemItem"
         },
         {
             "equipId": "9011",
@@ -7159,7 +7495,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "9012",
@@ -7173,7 +7510,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_HandOfJustice_GenAE"
         },
         {
             "equipId": "9013",
@@ -7187,7 +7525,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": " "
         },
         {
             "equipId": "9014",
@@ -7201,7 +7540,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_Shojin_GenAE"
         },
         {
             "equipId": "9015",
@@ -7215,7 +7555,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_Shroud_GenAE"
         },
         {
             "equipId": "9016",
@@ -7229,7 +7570,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_Sunfire_GenAE"
         },
         {
             "equipId": "9017",
@@ -7243,7 +7585,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_Warmogs_GenAE"
         },
         {
             "equipId": "9019",
@@ -7257,7 +7600,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_IonicSpark_GenAE"
         },
         {
             "equipId": "9020",
@@ -7271,7 +7615,8 @@
             "jobId": "0",
             "raceId": "0",
             "proStatus": "无",
-            "isShow": "1"
+            "isShow": "1",
+            "englishName": "TFT8_Item_Bloodthirster_GenAE"
         }
     ],
     "hex": [

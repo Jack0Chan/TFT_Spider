@@ -203,6 +203,7 @@ class TFTDataProcessor:
             "all_job_name": "",
             "job_chess": {},
             "race_chess": {},
+            "price_chess": {},
             "chess_name_info": {}
         }
 
@@ -236,6 +237,15 @@ class TFTDataProcessor:
                     res[race_name].append(chess['displayName'])
         self.processed_data["race_chess"] = res
 
+    def __match_price_chess(self) -> None:
+        res = {'1': [], '2': [], '3': [], '4': [], '5': []}
+        chess_data = self.raw_data['chess']
+        for price in res:
+            for chess in chess_data:
+                if chess['price'] == price:
+                    res[price].append(chess['displayName'])
+        self.processed_data["price_chess"] = res
+
     def __parse_all_strings(self) -> None:
         """
         获得所有的棋子名字,职业,以及种族.
@@ -260,13 +270,13 @@ class TFTDataProcessor:
     def __process_data(self) -> None:
         self.__match_job_chess()
         self.__match_race_chess()
+        self.__match_price_chess()
         self.__parse_all_strings()
         self.__parse_chess_name_info()
         save_json(self.processed_data, TFT_PROCESSED_DATA_FILE)
-   
+
     def save_tft_processed_data(self) -> None:
         save_json(self.processed_data, TFT_PROCESSED_DATA_FILE)
-
 
     def save_py_class(self) -> None:
         res = f"""class TFTData:
@@ -288,6 +298,7 @@ class TFTDataProcessor:
         self.all_job_name_str = "{self.processed_data['all_job_name']}"
         self.race_chess = {self.processed_data['race_chess']}
         self.job_chess = {self.processed_data['job_chess']}
+        self.price_chess = {self.processed_data['price_chess']}
         self.chess_name_info = {self.processed_data['chess_name_info']}
 """
 
