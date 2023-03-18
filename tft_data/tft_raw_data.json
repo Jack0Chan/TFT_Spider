@@ -2,7 +2,7 @@
     "version_config": {
         "赛季名称": "s8-怪兽来袭",
         "版本信息": "13.5",
-        "爬取日期": "2023-03-17",
+        "爬取日期": "2023-03-18",
         "url_chess_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js",
         "url_race_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/race.js",
         "url_job_data": "https://game.gtimg.cn/images/lol/act/img/tft/js/job.js",

@@ -279,6 +279,30 @@ class TFTDataProcessor:
         save_json(self.processed_data, TFT_PROCESSED_DATA_FILE)
 
     def save_py_class(self) -> None:
+        # {name: {"name": str, "gui_name": str, "jobs": list[str], "races": list[str], "price": int}}
+        simplified_chess_name_info = {}
+        for key, val in self.processed_data['chess_name_info'].items():
+            gui_name = f"{val['price']}-{val['displayName']}"
+            
+            jobs = []
+            for job, chess_names in self.processed_data['job_chess'].items():
+                if key in chess_names:
+                    jobs.append(job)
+
+            races = []
+            for race, chess_names in self.processed_data['race_chess'].items():
+                if key in chess_names:
+                    races.append(race)
+
+            tmp = {
+                "name": key,
+                "jobs": jobs, 
+                "races": races, 
+                "price": val['price'],
+                "gui_name": gui_name,
+                "gui_checkbox_key": f"checkbox_{key}",
+                "gui_combo_num_key": f"combo_num_{key}"}
+            simplified_chess_name_info[key] = tmp
         res = f"""class TFTData:
     _instance = None
     _is_first_init = True
@@ -299,7 +323,7 @@ class TFTDataProcessor:
         self.race_chess = {self.processed_data['race_chess']}
         self.job_chess = {self.processed_data['job_chess']}
         self.price_chess = {self.processed_data['price_chess']}
-        self.chess_name_info = {self.processed_data['chess_name_info']}
+        self.chess_name_info = {simplified_chess_name_info}
 """
 
         # 有些英雄名字字符ocr不支持，比如：chars in candidates are not in the vocab, ignoring them: {'菈'}
