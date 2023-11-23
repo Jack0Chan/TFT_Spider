@@ -12,27 +12,38 @@
 import os
 import json
 import datetime
+from PIL import Image
+import io
 # 第三方库
 import requests
 from rich.progress import track
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-TFT_RAW_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data\\tft_raw_data.json')
-TFT_PROCESSED_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data\\tft_processed_data.json')
-TFT_PY_CLASS_FILE = os.path.join(ROOT_DIR, 'tft_data\\TFTData.py')
+TFT_RAW_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data')
+TFT_RAW_DATA_FILE = os.path.join(TFT_RAW_DATA_FILE, 'tft_raw_data.json')
+
+TFT_PROCESSED_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data')
+TFT_PROCESSED_DATA_FILE = os.path.join(TFT_PROCESSED_DATA_FILE, 'tft_processed_data.json')
+
+TFT_PY_CLASS_FILE = os.path.join(ROOT_DIR, 'tft_data')
+TFT_PY_CLASS_FILE = os.path.join(TFT_PY_CLASS_FILE, 'TFTData.py')
 TFT_IMG_FILE = os.path.join(ROOT_DIR, 'tft_images')
+
 
 def load_json(filename: str) -> None:
     with open(filename, 'r', encoding='utf-8') as load_f:
         return json.load(load_f)
 
-def save_json(data: dict, filename: str, indent: int=4) -> None:
+
+def save_json(data: dict, filename: str, indent: int = 4) -> None:
     with open(filename, 'w', encoding='utf8') as file_obj:
         json.dump(data, file_obj, ensure_ascii=False, indent=indent)
+
 
 class RawDataCollector:
     """_summary_
     """
+
     def __init__(self) -> None:
         # 每个requests请求超时时间(秒)
         self.__time_out: int = 5
@@ -43,10 +54,10 @@ class RawDataCollector:
             "赛季名称": "s8-怪兽来袭",
             "版本信息": "13.5",
             "爬取日期": f"{datetime.date.today()}",
-            'url_chess_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js', 
-            'url_race_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/race.js', 
-            'url_job_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/job.js', 
-            'url_equip_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js', 
+            'url_chess_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js',
+            'url_race_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/race.js',
+            'url_job_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/job.js',
+            'url_equip_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js',
             'url_hex_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js'
         }
         self.__get_version_info()
@@ -57,16 +68,16 @@ class RawDataCollector:
             "chess": [],
             # 每一个race例子
             # {"raceId":"8101", "name":"AI程序", "traitId":"8101", "introduce":"【AI程序】在每局游戏中对每个玩家的配置都不同。", "alias":"8101.png", "level":{"2":"初始化【AI程序】的条件和结果]", "4":"[对程序添加另一个结果]", "6":"前几个层级的加成提升200%"},"TFTID":"8101", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/origins/8101.png", "race_color_list":"2:1,4:2,6:3"}
-            "race": [], 
+            "race": [],
             # 每一个job例子
             # {"jobId":"8001", "name":"精英战士", "traitId":"8001", "introduce":"这个羁绊仅会在你恰好拥有1个或4个独特的【精英战士】弈子时激活。", "alias":"8001.png", "level":{"1":"处决低于15%生命值的敌人", "4":"处决低于30%生命值的敌人"},"TFTID":"8001", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/classes/8001.png", "job_color_list":"1:1,4:3"}
             "job": [],
             # 每一个equip例子
             # {"equipId":"201", "type":"2", "name":"幽梦之灵", "effect":"携带者也是一名刺客", "keywords":"攻击力，转职，暴击", "formula":"301,308", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/equip/201.png", "TFTID":"2001", "jobId":"3", "raceId":"0", "proStatus":"无", "isShow":"0"}
-            "equip": [], 
+            "equip": [],
             # 每一个hex例子
             # {"id":"7351", "hexId":"2415", "type":"1", "name":"开摆", "imgUrl":"https://game.gtimg.cn/images/lol/act/img/tft/hex/20220531155500HEX6295c9d41fbf3.PNG", "fetterId":"0", "fetterType":"0", "augments":"TFT7_Augment_AFK", "hero_EN_name":"", "isShow":"1", "hero_enhancement_type":"0", "description":"你在接下来的3回合里无法采取任何行动。在此之后，获得18金币。", "createTime":"2023-03-0815:55:40"}
-            "hex": [], 
+            "hex": [],
         }
         self.__collect_raw_data()
 
@@ -79,14 +90,14 @@ class RawDataCollector:
         res = response.json()[0]
         # 返回案例，供参考，不使用
         res_example = {
-            'booleanPreVersion': False, 
-            'arrVersionLimit': ['12.23'], 
-            'stringName': '怪兽来袭', 
-            'idSeason': 's8', 
-            'url_chess_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js', 
-            'url_race_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/race.js', 
-            'url_job_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/job.js', 
-            'url_equip_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js', 
+            'booleanPreVersion': False,
+            'arrVersionLimit': ['12.23'],
+            'stringName': '怪兽来袭',
+            'idSeason': 's8',
+            'url_chess_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js',
+            'url_race_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/race.js',
+            'url_job_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/job.js',
+            'url_equip_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js',
             'url_hex_data': 'https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js'
         }
         # s8-怪兽来袭
@@ -135,6 +146,8 @@ class RawDataCollector:
             if "was not found" in str(img_resp.content):
                 img_resp = requests.get(img_url, headers=headers,
                                         timeout=self.__time_out, verify=False)
+            # img = Image.open(io.BytesIO(img_resp.content))
+            # img.save(img_name, 'JPEG')
             with open(img_name, mode="wb") as f:
                 f.write(img_resp.content)
 
@@ -144,7 +157,10 @@ class RawDataCollector:
             img_name = f"{TFT_IMG_FILE}/chess/{chess['TFTID']}-{chess['title']}-{chess['displayName']}.jpg"
             img_name = os.path.join(ROOT_DIR, img_name)
             img_url = f"https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/{chess['TFTID']}.jpg"
-            self.__download_image(img_name, img_url)
+            try:
+                self.__download_image(img_name, img_url)
+            except:
+                print(f"{chess['TFTID']}-{chess['title']}-{chess['displayName']} 图片下载失败。")
 
     def download_skill_imgs(self) -> None:
         chess_list = self.raw_data['chess']
@@ -153,22 +169,33 @@ class RawDataCollector:
             img_name = f"{TFT_IMG_FILE}/skill/{img_name}"
             img_name = os.path.join(ROOT_DIR, img_name)
             img_url = chess['skillImage']
-            self.__download_image(img_name, img_url)
+            try:
+                self.__download_image(img_name, img_url)
+            except Exception as e:
+                # print(f"{chess['TFTID']}-{chess['title']}-{chess['displayName']}-{chess['skillName']} 图片下载失败。详细信息：{chess}, {e}")
+                print(f"{chess['TFTID']}-{chess['title']}-{chess['displayName']}-{chess['skillName']} 图片下载失败。")
 
     def download_hex_imgs(self) -> None:
         hex_list = self.raw_data['hex']
         for hex_info in track(hex_list, description="正在爬取海克斯图片"):
-            img_name = f"{TFT_IMG_FILE}/hex/{hex_info['hexId']}-{hex_info['name']}.png"
+            img_name = f"{TFT_IMG_FILE}/hex/{hex_info['hexId']}-{hex_info['name']}.jpg"
             img_name = os.path.join(ROOT_DIR, img_name)
-            self.__download_image(img_name, hex_info['imgUrl'])
+            try:
+                self.__download_image(img_name, hex_info['imgUrl'])
+            except Exception as e:
+                # print(f"{hex_info['hexId']}-{hex_info['name']} 图片下载失败。详细信息：{hex_info}, {e}")
+                print(f"{hex_info['hexId']}-{hex_info['name']} 图片下载失败。")
 
     def download_equipment_imgs(self) -> None:
         equip_list = self.raw_data['equip']
         for equip in track(equip_list, description="正在爬取装备图片"):
-            img_name = f"{TFT_IMG_FILE}/equip/{equip['TFTID']}-{equip['name']}.png"
+            img_name = f"{TFT_IMG_FILE}/equip/{equip['TFTID']}-{equip['name'].replace('/', '')}.jpg"
             img_name = img_name.replace(" ", "").replace("//", "")
             img_name = os.path.join(ROOT_DIR, img_name)
-            self.__download_image(img_name, equip['imagePath'])
+            try:
+                self.__download_image(img_name, equip['imagePath'])
+            except Exception as e:
+                print(f"{equip['TFTID']}-{equip['name'].replace('/', '')} 图片下载失败。")
 
     def download_all_imgs(self) -> None:
         self.download_chess_imgs()
@@ -188,16 +215,16 @@ class TFTDataProcessor:
             "chess": [],
             # 每一个race例子
             # {"raceId":"8101", "name":"AI程序", "traitId":"8101", "introduce":"【AI程序】在每局游戏中对每个玩家的配置都不同。", "alias":"8101.png", "level":{"2":"初始化【AI程序】的条件和结果]", "4":"[对程序添加另一个结果]", "6":"前几个层级的加成提升200%"},"TFTID":"8101", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/origins/8101.png", "race_color_list":"2:1,4:2,6:3"}
-            "race": [], 
+            "race": [],
             # 每一个job例子
             # {"jobId":"8001", "name":"精英战士", "traitId":"8001", "introduce":"这个羁绊仅会在你恰好拥有1个或4个独特的【精英战士】弈子时激活。", "alias":"8001.png", "level":{"1":"处决低于15%生命值的敌人", "4":"处决低于30%生命值的敌人"},"TFTID":"8001", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/classes/8001.png", "job_color_list":"1:1,4:3"}
             "job": [],
             # 每一个equip例子
             # {"equipId":"201", "type":"2", "name":"幽梦之灵", "effect":"携带者也是一名刺客", "keywords":"攻击力，转职，暴击", "formula":"301,308", "imagePath":"https://game.gtimg.cn/images/lol/act/img/tft/equip/201.png", "TFTID":"2001", "jobId":"3", "raceId":"0", "proStatus":"无", "isShow":"0"}
-            "equip": [], 
+            "equip": [],
             # 每一个hex例子
             # {"id":"7351", "hexId":"2415", "type":"1", "name":"开摆", "imgUrl":"https://game.gtimg.cn/images/lol/act/img/tft/hex/20220531155500HEX6295c9d41fbf3.PNG", "fetterId":"0", "fetterType":"0", "augments":"TFT7_Augment_AFK", "hero_EN_name":"", "isShow":"1", "hero_enhancement_type":"0", "description":"你在接下来的3回合里无法采取任何行动。在此之后，获得18金币。", "createTime":"2023-03-0815:55:40"}
-            "hex": [], 
+            "hex": [],
         }
         self.processed_data: dict = {
             "all_chess_name": "",
@@ -256,7 +283,7 @@ class TFTDataProcessor:
         chess_name = [f'{chess["displayName"]}' for chess in self.raw_data['chess']]
         race_name = [f'{race["name"]}' for race in self.raw_data['race']]
         job_name = [f'{job["name"]}' for job in self.raw_data['job']]
-        
+
         self.processed_data["all_chess_name"] = '-'.join(chess_name)
         self.processed_data["all_race_name"] = '-'.join(race_name)
         self.processed_data["all_job_name"] = '-'.join(job_name)
@@ -285,7 +312,7 @@ class TFTDataProcessor:
         simplified_chess_name_info = {}
         for key, val in self.processed_data['chess_name_info'].items():
             gui_name = f"{val['price']}-{val['displayName']}"
-            
+
             jobs = []
             for job, chess_names in self.processed_data['job_chess'].items():
                 if key in chess_names:
@@ -298,8 +325,8 @@ class TFTDataProcessor:
 
             tmp = {
                 "name": key,
-                "jobs": jobs, 
-                "races": races, 
+                "jobs": jobs,
+                "races": races,
                 "price": val['price'],
                 "gui_name": gui_name,
                 "gui_checkbox_key": f"checkbox_{key}",
