@@ -3,10 +3,14 @@
 ## 为了方便伸手党...
 
 1. 为了方便伸手党，所有数据已经下载好，并保存在`tft_data`和`tft_images`文件夹中。
+
 2. `clone`此项目即可得到所有数据，无需运行代码。
+
 3. 如果赛季过期，请在`issue`里创建新的帖子，提醒作者更新数据，方便伸手党使用。
-4. 当前更新到：S10，`请选择对应的branch下载`。
-![Alt text](image.png)
+
+4. 当前更新到：S10。下面是主要log：
+
+  <img src="readme_images/terminal.png" width="80%">
 
 ## 介绍
 能够爬取云顶之弈棋子、装备、海克斯、技能图片和数据，并处理成方便使用格式（json）的爬虫工具。
@@ -21,8 +25,6 @@
 
 1. 云顶的棋子、装备、海克斯、技能的图片，放到`tft_images`目录下。
    
-   <img src="readme_images/chess.png" width="70%">
-
 2. 云顶官方数据，放到`tft_data/tft_raw_data.json`文件中，样例如下
     <details>
     <summary><font color="skyblue">点击查看 tft_raw_data.json 内容示例。注意，为了方便阅读这里只展示部分数据。</font></summary>
