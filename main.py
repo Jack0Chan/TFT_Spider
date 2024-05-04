@@ -161,11 +161,13 @@ class RawDataCollector:
                 self.__download_image(img_name, img_url)
             except:
                 print(f"{chess['TFTID']}-{chess['title']}-{chess['displayName']} 图片下载失败。")
+                print(f"chess - url: {img_url}")
 
     def download_skill_imgs(self) -> None:
         chess_list = self.raw_data['chess']
         for chess in track(chess_list, description="正在爬取技能图片"):
-            img_name = f"{chess['TFTID']}-{chess['title']}-{chess['displayName']}-{chess['skillName']}.jpg"
+            skill_name = chess['skillName'].replace("/", "-").replace("：", "-")
+            img_name = f"{chess['TFTID']}-{chess['title']}-{chess['displayName']}-{skill_name}.jpg"
             img_name = f"{TFT_IMG_FILE}/skill/{img_name}"
             img_name = os.path.join(ROOT_DIR, img_name)
             img_url = chess['skillImage']
@@ -174,10 +176,13 @@ class RawDataCollector:
             except Exception as e:
                 # print(f"{chess['TFTID']}-{chess['title']}-{chess['displayName']}-{chess['skillName']} 图片下载失败。详细信息：{chess}, {e}")
                 print(f"{chess['TFTID']}-{chess['title']}-{chess['displayName']}-{chess['skillName']} 图片下载失败。")
+                print(f"skill - url: {img_url}")
 
     def download_hex_imgs(self) -> None:
-        hex_list = self.raw_data['hex']
+        hex_list = self.raw_data['hex'][4]
         for hex_info in track(hex_list, description="正在爬取海克斯图片"):
+            # print(hex_info)
+            hex_info = hex_list[hex_info]
             img_name = f"{TFT_IMG_FILE}/hex/{hex_info['hexId']}-{hex_info['name']}.jpg"
             img_name = os.path.join(ROOT_DIR, img_name)
             try:
@@ -185,6 +190,7 @@ class RawDataCollector:
             except Exception as e:
                 # print(f"{hex_info['hexId']}-{hex_info['name']} 图片下载失败。详细信息：{hex_info}, {e}")
                 print(f"{hex_info['hexId']}-{hex_info['name']} 图片下载失败。")
+                print(f"hex - url: {hex_info['imgUrl']}")
 
     def download_equipment_imgs(self) -> None:
         equip_list = self.raw_data['equip']
@@ -196,6 +202,7 @@ class RawDataCollector:
                 self.__download_image(img_name, equip['imagePath'])
             except Exception as e:
                 print(f"{equip['TFTID']}-{equip['name'].replace('/', '')} 图片下载失败。")
+                print(f"url: {equip['imagePath']}")
 
     def download_all_imgs(self) -> None:
         self.download_chess_imgs()

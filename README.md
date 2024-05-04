@@ -8,9 +8,9 @@
 
 3. 如果赛季过期，请在`issue`里创建新的帖子，提醒作者更新数据，方便伸手党使用。
 
-4. 当前更新到：S10。下面是主要log：
+4. 当前更新到：S11。下面是主要log：
 
-  <img src="readme_images/terminal.png" width="80%">
+    <img src="readme_images/terminal.png" width="80%">
 
 ## 介绍
 能够爬取云顶之弈棋子、装备、海克斯、技能图片和数据，并处理成方便使用格式（json）的爬虫工具。
