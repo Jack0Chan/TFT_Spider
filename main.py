@@ -156,7 +156,9 @@ class RawDataCollector:
         for chess in track(chess_list, description="正在爬取棋子图片"):
             img_name = f"{TFT_IMG_FILE}/chess/{chess['TFTID']}-{chess['title']}-{chess['displayName']}.jpg"
             img_name = os.path.join(ROOT_DIR, img_name)
-            img_url = f"https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/{chess['TFTID']}.jpg"
+            version_id = self.version_config['赛季名称'].split("-")[0] # s12
+            img_url = f"https://game.gtimg.cn/images/lol/tftstore/{version_id}/624x318/{chess['TFTID']}.jpg"
+            # print(img_url)
             try:
                 self.__download_image(img_name, img_url)
             except:
