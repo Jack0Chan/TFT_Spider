@@ -202,3 +202,7 @@
 4. 运行结果
 
     <img src="readme_images/terminal.png" width="60%">
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Jack0Chan/TFT_Spider&type=Date)](https://www.star-history.com/#Jack0Chan/TFT_Spider&Date)
