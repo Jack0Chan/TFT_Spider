@@ -357,20 +357,24 @@ class TFTDataProcessor:
     def _chess(self):
         return select_season_chess(self.raw_data, self.season)
 
-    def _match_traits(self, kind, id_key, chess_id_key, output_key):
+    def _match_traits(self, kind, id_key, chess_id_key, chess_name_key, output_key):
         chess_data = self._chess()
         result = {}
         for trait in self.raw_data[kind]:
             trait_id = str(trait[id_key])
             result[trait["name"]] = [
                 chess["displayName"] for chess in chess_data
-                if trait_id in str(chess.get(chess_id_key, "")).split(",")
+                if (
+                    trait_id in str(chess.get(chess_id_key, "")).split(",")
+                    or trait["name"]
+                    in str(chess.get(chess_name_key, "")).split(",")
+                )
             ]
         self.processed_data[output_key] = result
 
     def _process_data(self):
-        self._match_traits("job", "jobId", "jobIds", "job_chess")
-        self._match_traits("race", "raceId", "raceIds", "race_chess")
+        self._match_traits("job", "jobId", "jobIds", "jobs", "job_chess")
+        self._match_traits("race", "raceId", "raceIds", "races", "race_chess")
         prices = {}
         for chess in self._chess():
             prices.setdefault(str(chess.get("price", "")), []).append(chess["displayName"])
