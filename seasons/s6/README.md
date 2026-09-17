@@ -4,7 +4,7 @@
 
 > 强化符文说明：S1-S5.5 尚未引入强化符文；S6 的腾讯历史强化符文文件未公开保留
 
-<img src="readme_images/tft_web.png" width="70%" alt="S6 数据概览">
+<img src="tft_web.png" width="70%" alt="S6 数据概览">
 
 ## 数据概览
 

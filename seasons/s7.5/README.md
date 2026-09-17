@@ -2,7 +2,7 @@
 
 腾讯官方历史静态接口恢复。数据版本 `12.17`，快照日期 `2026-09-17`。
 
-<img src="readme_images/tft_web.png" width="70%" alt="S7.5 数据概览">
+<img src="tft_web.png" width="70%" alt="S7.5 数据概览">
 
 ## 数据概览
 

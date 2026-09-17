@@ -4,7 +4,7 @@
 
 > 强化符文说明：该赛季尚未引入强化符文系统
 
-<img src="readme_images/tft_web.png" width="70%" alt="S3.5 数据概览">
+<img src="tft_web.png" width="70%" alt="S3.5 数据概览">
 
 ## 数据概览
 

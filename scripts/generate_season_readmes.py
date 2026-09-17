@@ -74,7 +74,7 @@ def create_readme(season_dir: Path) -> None:
 
 {source}。数据版本 `{config['版本信息']}`，快照日期 `{config['爬取日期']}`。
 {note_block}
-<img src="readme_images/tft_web.png" width="70%" alt="{season.upper()} 数据概览">
+<img src="tft_web.png" width="70%" alt="{season.upper()} 数据概览">
 
 ## 数据概览
 

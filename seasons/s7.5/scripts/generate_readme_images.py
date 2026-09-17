@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "tft_data"
 IMAGE_DIR = ROOT / "tft_images"
-README_IMAGE_DIR = ROOT / "readme_images"
+README_IMAGE_PATH = ROOT / "tft_web.png"
 FONT_CANDIDATES = (
     "/usr/share/fonts/google-noto-cjk/NotoSansCJK-Regular.ttc",
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
@@ -234,8 +234,7 @@ def draw_overview():
             fill=white,
         )
 
-    README_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
-    canvas.save(README_IMAGE_DIR / "tft_web.png", optimize=True)
+    canvas.save(README_IMAGE_PATH, optimize=True)
 
 
 def main():
@@ -247,7 +246,7 @@ def main():
     if args.season and args.season.lower() != actual:
         raise SystemExit(f"当前数据是 {actual}，不是 {args.season}")
     draw_overview()
-    print(f"generated {README_IMAGE_DIR / 'tft_web.png'}")
+    print(f"generated {README_IMAGE_PATH}")
 
 
 if __name__ == "__main__":

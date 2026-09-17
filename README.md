@@ -5,7 +5,7 @@ JSON 数据、处理后的 Python 数据类以及配套图片。
 
 当前最新赛季：**[S18 · 自然之力](seasons/s18/)**（版本 16.18）
 
-<img src="seasons/s18/readme_images/tft_web.png" width="70%">
+<img src="seasons/s18/tft_web.png" width="70%">
 
 ## 赛季目录
 

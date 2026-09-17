@@ -2,7 +2,7 @@
 
 仓库历史赛季快照。数据版本 `13.23`，快照日期 `2023-11-23`。
 
-<img src="readme_images/tft_web.png" width="70%" alt="S10 数据概览">
+<img src="tft_web.png" width="70%" alt="S10 数据概览">
 
 ## 数据概览
 

@@ -2,7 +2,7 @@
 
 仓库历史赛季快照。数据版本 `15.16`，快照日期 `2025-08-17`。
 
-<img src="readme_images/tft_web.png" width="70%" alt="S15 数据概览">
+<img src="tft_web.png" width="70%" alt="S15 数据概览">
 
 ## 数据概览
 

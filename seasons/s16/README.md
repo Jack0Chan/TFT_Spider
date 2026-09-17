@@ -2,7 +2,7 @@
 
 仓库历史赛季快照。数据版本 `16.7`，快照日期 `2026-09-17`。
 
-<img src="readme_images/tft_web.png" width="70%" alt="S16 数据概览">
+<img src="tft_web.png" width="70%" alt="S16 数据概览">
 
 ## 数据概览
 
