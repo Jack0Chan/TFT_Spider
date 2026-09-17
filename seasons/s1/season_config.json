@@ -1,0 +1,14 @@
+{
+  "season": "s1",
+  "title": "初代赛季",
+  "version": "9.21",
+  "archive_path": "9.21-2019.S1",
+  "restored_at": "2026-09-17",
+  "urls": {
+    "chess": "https://game.gtimg.cn/images/lol/act/img/tft/js/9.21-2019.S1/chess.js",
+    "race": "https://game.gtimg.cn/images/lol/act/img/tft/js/9.21-2019.S1/race.js",
+    "job": "https://game.gtimg.cn/images/lol/act/img/tft/js/9.21-2019.S1/job.js",
+    "equip": "https://game.gtimg.cn/images/lol/act/img/tft/js/9.21-2019.S1/equip.js"
+  },
+  "hex_note": "该赛季尚未引入强化符文系统"
+}

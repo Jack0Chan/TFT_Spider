@@ -1,0 +1,14 @@
+{
+  "season": "s9",
+  "title": "符文大陆传奇",
+  "version": "13.12",
+  "archive_path": "13.12-2023.S9",
+  "restored_at": "2026-09-17",
+  "urls": {
+    "chess": "https://game.gtimg.cn/images/lol/act/img/tft/js/13.12-2023.S9/chess.js",
+    "race": "https://game.gtimg.cn/images/lol/act/img/tft/js/13.12-2023.S9/race.js",
+    "job": "https://game.gtimg.cn/images/lol/act/img/tft/js/13.12-2023.S9/job.js",
+    "equip": "https://game.gtimg.cn/images/lol/act/img/tft/js/13.12-2023.S9/equip.js",
+    "hex": "https://game.gtimg.cn/images/lol/act/img/tft/js/13.12-2023.S9/hex.js"
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/12-诅咒之刃.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/（S1）4103.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/equip/%EF%BC%88S1%EF%BC%894103.png"
+  },
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/13-暗裔.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/（S1）4102.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/equip/%EF%BC%88S1%EF%BC%894102.png"
+  },
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/22-离子火花.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/3178.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/equip/3178.png"
+  },
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/23-骑士之誓.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/（S1）4106.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/equip/%EF%BC%88S1%EF%BC%894106.png"
+  },
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/41-悠米.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/（S1）4110.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/equip/%EF%BC%88S1%EF%BC%894110.png"
+  },
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/42-幽梦之灵.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/3142.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/equip/3142.png"
+  },
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/54-连指手套.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/（S1）5110.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/equip/%EF%BC%88S1%EF%BC%895110.png"
+  }
+]

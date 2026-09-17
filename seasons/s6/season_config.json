@@ -1,0 +1,14 @@
+{
+  "season": "s6",
+  "title": "双城之战",
+  "version": "11.22",
+  "archive_path": "11.22-2021.S6",
+  "restored_at": "2026-09-17",
+  "urls": {
+    "chess": "https://game.gtimg.cn/images/lol/act/img/tft/js/11.22-2021.S6/chess.js",
+    "race": "https://game.gtimg.cn/images/lol/act/img/tft/js/11.22-2021.S6/race.js",
+    "job": "https://game.gtimg.cn/images/lol/act/img/tft/js/11.22-2021.S6/job.js",
+    "equip": "https://game.gtimg.cn/images/lol/act/img/tft/js/11.22-2021.S6/equip.js"
+  },
+  "hex_note": "S1-S5.5 尚未引入强化符文；S6 的腾讯历史强化符文文件未公开保留"
+}

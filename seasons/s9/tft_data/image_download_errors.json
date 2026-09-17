@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "skill",
+    "path": "tft_images/skill/917-无畏战车-厄加特-鄙弃.jpg",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/champions/TFT9_Urgot.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/champions/TFT9_Urgot.png"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "season": "s7",
+  "title": "巨龙之境",
+  "version": "12.11",
+  "archive_path": "12.11-2022.S7",
+  "restored_at": "2026-09-17",
+  "urls": {
+    "chess": "https://game.gtimg.cn/images/lol/act/img/tft/js/12.11-2022.S7/chess.js",
+    "race": "https://game.gtimg.cn/images/lol/act/img/tft/js/12.11-2022.S7/race.js",
+    "job": "https://game.gtimg.cn/images/lol/act/img/tft/js/12.11-2022.S7/job.js",
+    "equip": "https://game.gtimg.cn/images/lol/act/img/tft/js/12.11-2022.S7/equip.js",
+    "hex": "https://game.gtimg.cn/images/lol/act/img/tft/js/12.11-2022.S7/hex.js"
+  }
+}

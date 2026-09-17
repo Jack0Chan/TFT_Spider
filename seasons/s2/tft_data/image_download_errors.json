@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/246-元素女皇-奇亚娜.jpg",
+    "url": "upload/img/skill/Qiyana_地狱火_Red.png",
+    "error": "MissingSchema: Invalid URL 'upload/img/skill/Qiyana_地狱火_Red.png': No scheme supplied. Perhaps you meant https://upload/img/skill/Qiyana_地狱火_Red.png?"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/84-虚空先知-玛尔扎哈.jpg",
+    "url": "upload/img/skill/Malzahar_W.png",
+    "error": "MissingSchema: Invalid URL 'upload/img/skill/Malzahar_W.png': No scheme supplied. Perhaps you meant https://upload/img/skill/Malzahar_W.png?"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/96-复仇焰魂-布兰德.jpg",
+    "url": "upload/img/skill/BrandR.png",
+    "error": "MissingSchema: Invalid URL 'upload/img/skill/BrandR.png': No scheme supplied. Perhaps you meant https://upload/img/skill/BrandR.png?"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/99-光辉女郎-拉克丝.jpg",
+    "url": "upload/img/skill/LuxFinaleFunkeln.png",
+    "error": "MissingSchema: Invalid URL 'upload/img/skill/LuxFinaleFunkeln.png': No scheme supplied. Perhaps you meant https://upload/img/skill/LuxFinaleFunkeln.png?"
+  },
+  {
+    "kind": "skill",
+    "path": "tft_images/skill/246-元素女皇-奇亚娜-以绪塔尔之锋.jpg",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/champions/Qiyana_地狱火_Red.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/champions/Qiyana_%E5%9C%B0%E7%8B%B1%E7%81%AB_Red.png"
+  }
+]

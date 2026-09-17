@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/134-刺客的利爪.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/324.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/equip/324.jpg"
+  }
+]

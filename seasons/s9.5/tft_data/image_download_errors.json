@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/957-符文法师-瑞兹-以绪塔尔.jpg",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/original-image/TFT9_RyzeIonia.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/original-image/TFT9_RyzeIonia.png"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/958-符文法师-瑞兹-比尔吉沃特.jpg",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/original-image/TFT9_RyzeIonia.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/original-image/TFT9_RyzeIonia.png"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/980-祖安怒兽-沃里克.jpg",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/original-image/921.png",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/original-image/921.png"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93067-钱钱钱！（英雄传说之力）.png",
+    "url": "https://game.gtimg.cn/images/lol/act/img/tft/hex/20230606105017HEX647e9ee9d4efa.png",
+    "error": "SSLError: HTTPSConnectionPool(host='game.gtimg.cn', port=443): Max retries exceeded with url: /images/lol/act/img/tft/hex/20230606105017HEX647e9ee9d4efa.png (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"
+  }
+]
