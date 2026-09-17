@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/760-玉龙召唤物-玉猫雕像.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/760.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/760.jpg"
+  }
+]

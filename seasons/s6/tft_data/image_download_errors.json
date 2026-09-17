@@ -1,17 +1,1 @@
-[
-  {
-    "kind": "chess",
-    "path": "tft_images/chess/371-赏金猎人-厄运小姐.jpg",
-    "url": [
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/missfortune_q.png",
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/miss-fortune-make-it-rain.png"
-    ],
-    "error": "InvalidSchema: No connection adapters were found for \"['https://game.gtimg.cn/images/lol/act/img/tft/original-image/missfortune_q.png', 'https://game.gtimg.cn/images/lol/act/img/tft/original-image/miss-fortune-make-it-rain.png']\""
-  },
-  {
-    "kind": "equip",
-    "path": "tft_images/equip/272-铁甲卫士纹章.png",
-    "url": "https://game.gtimg.cn/images/lol/act/img/tft/equip/VanguardsCuirass_Mc1n2xLJ7vrG6uVulG6PoWdJmNtYZuUhfX0L9WwP.png",
-    "error": "SSLError: HTTPSConnectionPool(host='game.gtimg.cn', port=443): Max retries exceeded with url: /images/lol/act/img/tft/equip/VanguardsCuirass_Mc1n2xLJ7vrG6uVulG6PoWdJmNtYZuUhfX0L9WwP.png (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"
-  }
-]
+[]

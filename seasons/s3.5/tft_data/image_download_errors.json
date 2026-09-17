@@ -1,63 +1,57 @@
 [
   {
     "kind": "chess",
-    "path": "tft_images/chess/179-深海泰坦-诺提勒斯.jpg",
-    "url": [
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png",
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/11111.jpg"
-    ],
-    "error": "InvalidSchema: No connection adapters were found for \"['https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png', 'https://game.gtimg.cn/images/lol/act/img/tft/original-image/11111.jpg']\""
+    "path": "tft_images/chess/133-虚空恐惧-科加斯.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/133.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/133.jpg"
   },
   {
     "kind": "chess",
-    "path": "tft_images/chess/180-星界游神-巴德.jpg",
-    "url": [
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png",
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/222222.jpg"
-    ],
-    "error": "InvalidSchema: No connection adapters were found for \"['https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png', 'https://game.gtimg.cn/images/lol/act/img/tft/original-image/222222.jpg']\""
+    "path": "tft_images/chess/146-虚空之女-卡莎.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/146.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/146.jpg"
   },
   {
     "kind": "chess",
-    "path": "tft_images/chess/181-迷失之牙-纳尔.jpg",
-    "url": [
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png",
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/未标题-1.jpg"
-    ],
-    "error": "InvalidSchema: No connection adapters were found for \"['https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png', 'https://game.gtimg.cn/images/lol/act/img/tft/original-image/未标题-1.jpg']\""
+    "path": "tft_images/chess/148-虚空行者-卡萨丁.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/148.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/148.jpg"
   },
   {
     "kind": "chess",
-    "path": "tft_images/chess/182-迅捷斥候-提莫.jpg",
-    "url": [
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png",
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/未标题-4441.jpg"
-    ],
-    "error": "InvalidSchema: No connection adapters were found for \"['https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png', 'https://game.gtimg.cn/images/lol/act/img/tft/original-image/未标题-4441.jpg']\""
+    "path": "tft_images/chess/149-正义天使-凯尔.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/149.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/149.jpg"
   },
   {
     "kind": "chess",
-    "path": "tft_images/chess/190-放逐之刃-锐雯.jpg",
-    "url": [
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png",
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/11122.jpg"
-    ],
-    "error": "InvalidSchema: No connection adapters were found for \"['https://game.gtimg.cn/images/lol/act/img/tft/original-image/1.png', 'https://game.gtimg.cn/images/lol/act/img/tft/original-image/11122.jpg']\""
+    "path": "tft_images/chess/150-虚空掠夺者-卡兹克.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/150.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/150.jpg"
   },
   {
     "kind": "chess",
-    "path": "tft_images/chess/192-风暴之怒-迦娜.jpg",
-    "url": [
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/2.png",
-      "https://game.gtimg.cn/images/lol/act/img/tft/original-image/4444433.jpg"
-    ],
-    "error": "InvalidSchema: No connection adapters were found for \"['https://game.gtimg.cn/images/lol/act/img/tft/original-image/2.png', 'https://game.gtimg.cn/images/lol/act/img/tft/original-image/4444433.jpg']\""
+    "path": "tft_images/chess/154-光辉女郎-拉克丝.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/154.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/154.jpg"
   },
   {
     "kind": "chess",
-    "path": "tft_images/chess/197-星界游神-巴德.jpg",
-    "url": "https://game.gtimg.cn/images/lol/act/img/tft/original-image/TOC掌盟云顶专区页面二维码.png",
-    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/act/img/tft/original-image/TOC%E6%8E%8C%E7%9B%9F%E4%BA%91%E9%A1%B6%E4%B8%93%E5%8C%BA%E9%A1%B5%E9%9D%A2%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
+    "path": "tft_images/chess/157-赏金猎人-厄运小姐.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/157.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/157.jpg"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/165-琴瑟仙女-娑娜.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/165.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/165.jpg"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/170-虚空之眼-维克兹.jpg",
+    "url": "https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/170.jpg",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/170.jpg"
   },
   {
     "kind": "equip",

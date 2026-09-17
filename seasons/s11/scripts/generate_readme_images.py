@@ -92,6 +92,7 @@ def choose_champions(processed, count=12):
         item
         for item in processed["chess_name_info"].values()
         if str(item.get("price")) in {"1", "2", "3", "4", "5"}
+        and has_landscape_chess_image(item)
     ]
     eligible.sort(
         key=lambda item: (
@@ -117,14 +118,25 @@ def trait_map(processed):
 
 def find_chess_image(champion: dict):
     candidates = [champion.get("TFTID"), champion.get("chessId")]
-    for directory in ("chess", "skill"):
-        for identifier in candidates:
-            if identifier is None:
-                continue
-            matches = sorted((IMAGE_DIR / directory).glob(f"{identifier}-*"))
-            if matches:
-                return matches[0]
+    for identifier in candidates:
+        if identifier is None:
+            continue
+        matches = sorted((IMAGE_DIR / "chess").glob(f"{identifier}-*"))
+        if matches:
+            return matches[0]
     return None
+
+
+def has_landscape_chess_image(champion: dict) -> bool:
+    """Reject missing/square assets so skill icons never enter README cards."""
+    path = find_chess_image(champion)
+    if path is None:
+        return False
+    try:
+        with Image.open(path) as image:
+            return image.width / image.height >= 1.3
+    except OSError:
+        return False
 
 
 def draw_overview():

@@ -173,8 +173,9 @@ def image_jobs(raw: dict):
         yield (
             "chess",
             IMAGE_DIR / "chess" / f"{tft_id}-{title}-{name}.jpg",
-            chess.get("originalImage")
-            or f"https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/{tft_id}.jpg",
+            # Many old originalImage values point to 64x64 skill icons.  The
+            # cham-icons endpoint is the official 624x318 champion card art.
+            f"https://game.gtimg.cn/images/lol/tft/cham-icons/624x318/{tft_id}.jpg",
         )
         if chess.get("skillImage"):
             skill = safe_name(chess.get("skillName"))
@@ -253,7 +254,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workers", type=int, default=24)
     parser.add_argument("--skip-images", action="store_true")
+    parser.add_argument(
+        "--images-only",
+        action="store_true",
+        help="Use the archived JSON and only download missing images",
+    )
     args = parser.parse_args()
+    if args.images_only:
+        raw = read_json(DATA_DIR / "tft_raw_data.json")
+        errors = download_images(raw, max(1, args.workers))
+        print(f"image errors: {len(errors)}")
+        return
     config = read_json(CONFIG_FILE)
     print(f"rebuilding {config['season']} {config['title']} ({config['version']})")
     raw = collect_raw(config)
