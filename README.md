@@ -15,6 +15,19 @@
 
 数据来源：[腾讯官方云顶之弈主题站](https://lol.qq.com/tft/#/champion)
 
+## 赛季归档
+
+历史赛季使用独立 Git 分支保存。目前包含 `S8.5`、`S10` 至 `S18`；`main`
+始终指向最新赛季。S16 起可显式指定赛季刷新，避免把官网活动模式误当作当前赛季：
+
+```bash
+python main.py --season s16
+python main.py --season s17
+python main.py --season s18
+```
+
+S16、S17、S18 还会分别归档英雄解锁任务、神祇祝福、仙灵（Wisp）数据和图片。
+
 <img src="readme_images/tft_web.png" width="70%">
 
 ## 爬取数据内容
@@ -200,7 +213,8 @@
    - requests==2.28.2
    - rich==13.3.2
    - 安装方式：`pip install -r requirements.txt`。
-3. 运行代码：`python main.py`。
+3. 运行代码：`python main.py --season s18`。可通过 `--workers` 调整图片下载并发数，
+   或使用 `--skip-images` 仅刷新 JSON 和 `TFTData.py`。
 4. 运行结果
 
     <img src="readme_images/terminal.png" width="60%">
