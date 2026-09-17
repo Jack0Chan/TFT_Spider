@@ -1,0 +1,57 @@
+[
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10177-德玛西亚之力-盖伦.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10179-魔法猫咪-悠米.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10183-次元门-次元门.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10184-SRU 螃蟹-SRU 螃蟹.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10193-龙血武姬-希瓦娜.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10194-诺克萨斯统领-斯维因.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10198-蛙-蛙.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10199-冰雕士兵-冰雕士兵.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10200-冰雕士兵-冰雕士兵.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10202-高塔-高塔.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93352-次元快递服务.jpg",
+    "error": "HTTP 404 response saved as image"
+  }
+]

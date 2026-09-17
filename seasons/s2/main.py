@@ -9,6 +9,7 @@ import json
 import os
 import pprint
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -35,9 +36,17 @@ def write_json(path: Path, value) -> None:
 
 
 def fetch_json(url: str):
-    response = requests.get(url, timeout=TIMEOUT)
-    response.raise_for_status()
-    return response.json()
+    last_error = None
+    for attempt in range(3):
+        try:
+            response = requests.get(url, timeout=TIMEOUT)
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as exc:
+            last_error = exc
+            if attempt < 2:
+                time.sleep(1 + attempt)
+    raise RuntimeError(f"腾讯数据请求失败（已重试 3 次）：{url}") from last_error
 
 
 def collect_raw(config: dict) -> dict:

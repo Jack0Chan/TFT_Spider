@@ -61,6 +61,10 @@ S16、S17、S18 支持通过 `--season` 显式指定赛季，并可通过 `--wor
 图片下载并发数，或使用 `--skip-images` 只刷新 JSON 和 `TFTData.py`。旧赛季请按
 对应目录 README 中的命令运行。
 
+S8～S15 的历史接口未固定到对应版本，因此 `python main.py` 默认只使用目录内的
+原始快照离线重建处理数据，避免被当前赛季覆盖。旧版联网行为仅在显式传入
+`--refresh-current` 时启用。
+
 缺失于原仓库历史的赛季可用固定官方端点批量复现：
 
 ```bash
@@ -69,6 +73,17 @@ python scripts/rebuild_historical_seasons.py --workers 24
 
 该命令覆盖 S1–S7.5、S9 和 S9.5；S8 使用仓库历史提交保存，S8.5 及之后使用原有
 赛季快照保存。
+
+## 校验全部赛季
+
+以下命令会以只读方式逐赛季检查入口参数、Python 语法、JSON 数据结构、赛季标识
+以及全部归档图片：
+
+```bash
+python scripts/check_all_seasons.py
+```
+
+快速检查可增加 `--quick`，跳过对 `tft_images/` 中每张图片的完整解码。
 
 数据来源：[腾讯官方云顶之弈主题站](https://lol.qq.com/tft/#/champion)
 

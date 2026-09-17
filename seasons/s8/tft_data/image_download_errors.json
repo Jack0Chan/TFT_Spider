@@ -1,0 +1,12 @@
+[
+  {
+    "kind": "equip",
+    "path": "tft_images/equip/8022-未来战士纹章.png",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "skill",
+    "path": "tft_images/skill/789-残月之肃-厄斐琉斯-月之武备.jpg",
+    "error": "HTTP 404 response saved as image"
+  }
+]

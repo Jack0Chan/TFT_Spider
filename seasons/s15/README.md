@@ -13,14 +13,15 @@
 | 职业羁绊 | 12 |
 | 装备 | 265 |
 | 强化符文 | 349 |
-| 已归档图片 | 885 |
-| 官方失效图片链接 | 未单独审计 |
+| 已归档图片 | 876 |
+| 官方失效图片链接 | 9 |
 
 ## 目录
 
 - 原始数据：`tft_data/tft_raw_data.json`
 - 处理数据：`tft_data/tft_processed_data.json`
 - Python 数据类：`tft_data/TFTData.py`
+- 图片错误审计：`tft_data/image_download_errors.json`
 - 图片目录：`tft_images/`
 - README 图片生成器：`scripts/generate_readme_images.py`
 

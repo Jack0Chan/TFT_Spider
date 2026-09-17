@@ -1,0 +1,47 @@
+[
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10246-伊莉丝 蜘蛛-伊莉丝 蜘蛛.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10256-伊莉丝 小蜘蛛-伊莉丝 小蜘蛛.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10267-斯维因 恶魔形态-斯维因 恶魔形态.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10270-海克斯科技锻炉-海克斯科技锻炉.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93578-.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93579-.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93580-.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93581-.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93582-.jpg",
+    "error": "HTTP 404 response saved as image"
+  }
+]

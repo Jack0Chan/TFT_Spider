@@ -17,9 +17,9 @@ import requests
 from rich.progress import track
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-TFT_RAW_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data\\tft_raw_data.json')
-TFT_PROCESSED_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data\\tft_processed_data.json')
-TFT_PY_CLASS_FILE = os.path.join(ROOT_DIR, 'tft_data\\TFTData.py')
+TFT_RAW_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data', 'tft_raw_data.json')
+TFT_PROCESSED_DATA_FILE = os.path.join(ROOT_DIR, 'tft_data', 'tft_processed_data.json')
+TFT_PY_CLASS_FILE = os.path.join(ROOT_DIR, 'tft_data', 'TFTData.py')
 TFT_IMG_FILE = os.path.join(ROOT_DIR, 'tft_images')
 
 def load_json(filename: str) -> None:
@@ -342,6 +342,16 @@ class TFTDataProcessor:
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description='重建归档数据；联网更新需显式确认')
+    parser.add_argument('--refresh-current', action='store_true', help='运行旧版联网抓取逻辑（会获取当前赛季）')
+    args = parser.parse_args()
+    if not args.refresh_current:
+        tdp = TFTDataProcessor()
+        tdp.save_tft_processed_data()
+        tdp.save_py_class()
+        print(f'归档数据校验并重建完成：{TFT_PROCESSED_DATA_FILE}')
+        raise SystemExit(0)
     # 下载官方的raw数据
     rdc = RawDataCollector()
     # 保存爬取的信息到 TFT_RAW_DATA_FILE = 'tft_raw_data.json'

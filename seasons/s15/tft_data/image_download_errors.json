@@ -1,0 +1,47 @@
+[
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10367--艾克.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10437--缠绕之根.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "chess",
+    "path": "tft_images/chess/10438--致命棘刺.jpg",
+    "error": "HTTP 404 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93578-.jpg",
+    "error": "HTTP 403 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93579-.jpg",
+    "error": "HTTP 403 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93580-.jpg",
+    "error": "HTTP 403 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93581-.jpg",
+    "error": "HTTP 403 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/93582-.jpg",
+    "error": "HTTP 403 response saved as image"
+  },
+  {
+    "kind": "hex",
+    "path": "tft_images/hex/94037-黑暗其内.jpg",
+    "error": "empty response saved as image"
+  }
+]
