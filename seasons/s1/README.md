@@ -1,13 +1,12 @@
 # TFT_Spider — S1 初代赛季
 
-腾讯官方历史版本 `9.21-2019.S1` 的自包含恢复快照，数据版本
-`9.21`，于 `2026-09-17` 恢复并校验。
+腾讯官方历史静态接口恢复。数据版本 `9.21`，快照日期 `2026-09-17`。
 
-> 强化符文：该赛季尚未引入强化符文系统
+> 强化符文说明：该赛季尚未引入强化符文系统
 
-<img src="readme_images/tft_web.png" width="70%">
+<img src="readme_images/tft_web.png" width="70%" alt="S1 数据概览">
 
-## 内容
+## 数据概览
 
 | 类型 | 数量 |
 | --- | ---: |
@@ -16,15 +15,20 @@
 | 职业羁绊 | 10 |
 | 装备 | 54 |
 | 强化符文 | 0 |
+| 已归档图片 | 161 |
 | 官方失效图片链接 | 7 |
+
+## 目录
 
 - 原始数据：`tft_data/tft_raw_data.json`
 - 处理数据：`tft_data/tft_processed_data.json`
 - Python 数据类：`tft_data/TFTData.py`
 - 图片错误审计：`tft_data/image_download_errors.json`
+- 历史接口配置：`season_config.json`
 - 图片目录：`tft_images/`
+- README 图片生成器：`scripts/generate_readme_images.py`
 
-## 重新构建
+## 使用
 
 ```bash
 pip install -r requirements.txt
@@ -32,6 +36,4 @@ python main.py --workers 24
 python scripts/generate_readme_images.py --season s1
 ```
 
-数据来源：[腾讯官方云顶之弈历史静态资源](https://game.gtimg.cn/)
-
-<img src="readme_images/terminal.png" width="60%">
+数据来源：[腾讯官方云顶之弈静态资源](https://game.gtimg.cn/)

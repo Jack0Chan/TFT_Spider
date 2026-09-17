@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate deterministic README screenshots from the checked-out season data."""
+"""Generate one deterministic season overview image from archived TFT data."""
 
 from __future__ import annotations
 
@@ -20,43 +20,55 @@ FONT_CANDIDATES = (
     "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
 )
-MONO_CANDIDATES = (
-    "/usr/share/fonts/google-noto-cjk/NotoSansCJK-Regular.ttc",
-    "/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf",
-    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
-    "/usr/share/fonts/opentype/noto/NotoSansMonoCJK-Regular.ttc",
-)
+COST_COLORS = {
+    1: ("#4b5563", "#d1d5db"),
+    2: ("#176b45", "#4ade80"),
+    3: ("#185b8d", "#60a5fa"),
+    4: ("#71368a", "#d084f5"),
+    5: ("#8a6418", "#f6c453"),
+}
 
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def font(size: int, mono: bool = False):
-    candidates = MONO_CANDIDATES if mono else FONT_CANDIDATES
-    for path in candidates:
+def font(size: int):
+    for path in FONT_CANDIDATES:
         if Path(path).exists():
             return ImageFont.truetype(path, size=size)
     return ImageFont.load_default()
 
 
-def fit_text(draw, text, max_width, start_size, mono=False):
+def fit_text(draw, text, max_width, start_size):
     for size in range(start_size, 13, -1):
-        selected = font(size, mono)
+        selected = font(size)
         if draw.textbbox((0, 0), text, font=selected)[2] <= max_width:
             return selected
-    return font(13, mono)
+    return font(13)
 
 
 def cover(image: Image.Image, size: tuple[int, int]) -> Image.Image:
     image = image.convert("RGB")
     scale = max(size[0] / image.width, size[1] / image.height)
     resized = image.resize(
-        (round(image.width * scale), round(image.height * scale)), Image.Resampling.LANCZOS
+        (round(image.width * scale), round(image.height * scale)),
+        Image.Resampling.LANCZOS,
     )
     left = max(0, (resized.width - size[0]) // 2)
     top = max(0, (resized.height - size[1]) // 2)
     return resized.crop((left, top, left + size[0], top + size[1]))
+
+
+def hex_count(raw: dict) -> int:
+    values = raw.get("hex", [])
+    if (
+        isinstance(values, list)
+        and len(values) == 5
+        and isinstance(values[4], dict)
+    ):
+        return len(values[4])
+    return len(values)
 
 
 def season_context():
@@ -77,10 +89,16 @@ def season_context():
 
 def choose_champions(processed, count=12):
     eligible = [
-        item for item in processed["chess_name_info"].values()
+        item
+        for item in processed["chess_name_info"].values()
         if str(item.get("price")) in {"1", "2", "3", "4", "5"}
     ]
-    eligible.sort(key=lambda item: (int(item["price"]), str(item.get("TFTID") or item.get("chessId") or "")))
+    eligible.sort(
+        key=lambda item: (
+            int(item["price"]),
+            str(item.get("TFTID") or item.get("chessId") or ""),
+        )
+    )
     if len(eligible) <= count:
         return eligible
     indexes = [round(i * (len(eligible) - 1) / (count - 1)) for i in range(count)]
@@ -97,11 +115,16 @@ def trait_map(processed):
     return result
 
 
-def find_chess_image(tft_id):
-    matches = sorted((IMAGE_DIR / "chess").glob(f"{tft_id}-*"))
-    if not matches:
-        matches = sorted((IMAGE_DIR / "skill").glob(f"{tft_id}-*"))
-    return matches[0] if matches else None
+def find_chess_image(champion: dict):
+    candidates = [champion.get("TFTID"), champion.get("chessId")]
+    for directory in ("chess", "skill"):
+        for identifier in candidates:
+            if identifier is None:
+                continue
+            matches = sorted((IMAGE_DIR / directory).glob(f"{identifier}-*"))
+            if matches:
+                return matches[0]
+    return None
 
 
 def draw_overview():
@@ -116,8 +139,7 @@ def draw_overview():
 
     draw.rectangle((0, 86, 238, 1152), fill="#1d192b")
     draw.text((28, 124), season, font=font(40), fill=green)
-    title_font = fit_text(draw, title, 185, 28)
-    draw.text((28, 180), title, font=title_font, fill=white)
+    draw.text((28, 180), title, font=fit_text(draw, title, 185, 28), fill=white)
     draw.text((28, 230), f"版本 {config['版本信息']}", font=font(22), fill=muted)
     draw.text((28, 265), config["爬取日期"], font=font(19), fill=muted)
     draw.line((28, 310, 210, 310), fill="#39344c", width=2)
@@ -127,14 +149,14 @@ def draw_overview():
         ("羁绊", len(raw["race"])),
         ("职业", len(raw["job"])),
         ("装备", len(raw["equip"])),
-        ("强化符文", len(raw["hex"])),
+        ("强化符文", hex_count(raw)),
     ]
     if "task" in raw:
         labels.append(("英雄任务", len(raw["task"])))
     if "bless" in raw:
         labels.append(("神祇祝福", len(raw["bless"])))
     if "elf" in raw:
-        labels.append(("仙灵 Wisp", len(raw["elf"]["wisps"])))
+        labels.append(("仙灵 Wisp", len(raw["elf"].get("wisps", []))))
     y = 344
     for label, value in labels:
         draw.text((28, y), label, font=font(20), fill=muted)
@@ -148,7 +170,8 @@ def draw_overview():
     draw.text(
         (275, 174),
         f"已归档 {sum(counts.values()):,} 张图片  ·  官方不可用链接 {len(errors)} 个",
-        font=font(22), fill=muted,
+        font=font(22),
+        fill=muted,
     )
     draw.rectangle((275, 218, 1998, 220), fill="#383248")
 
@@ -160,84 +183,59 @@ def draw_overview():
         row, col = divmod(index, 4)
         x = x0 + col * (card_w + gap_x)
         y = y0 + row * (card_h + gap_y)
-        draw.rounded_rectangle((x, y, x + card_w, y + card_h), 8, fill="#262137")
-        image_path = find_chess_image(champion.get("TFTID"))
+        cost = int(champion["price"])
+        card_color, accent_color = COST_COLORS[cost]
+        draw.rounded_rectangle(
+            (x, y, x + card_w, y + card_h),
+            8,
+            fill=card_color,
+            outline=accent_color,
+            width=4,
+        )
+        image_path = find_chess_image(champion)
         if image_path:
             with Image.open(image_path) as source:
-                canvas.paste(cover(source, (card_w, image_h)), (x, y))
-        draw.rectangle((x, y + image_h - 45, x + card_w, y + image_h), fill="#00000088")
+                canvas.paste(cover(source, (card_w - 8, image_h - 4)), (x + 4, y + 4))
+        draw.rectangle(
+            (x + 4, y + image_h - 45, x + card_w - 4, y + image_h),
+            fill="#17131f",
+        )
         name = champion["displayName"]
-        draw.text((x + 18, y + image_h - 37), name, font=fit_text(draw, name, 270, 24), fill=white)
         draw.text(
-            (x + card_w - 18, y + image_h - 37), f"{champion['price']} 金币",
-            font=font(20), fill=green, anchor="ra",
+            (x + 18, y + image_h - 37),
+            name,
+            font=fit_text(draw, name, 270, 24),
+            fill=white,
+        )
+        draw.text(
+            (x + card_w - 18, y + image_h - 37),
+            f"{cost} 金币",
+            font=font(20),
+            fill=accent_color,
+            anchor="ra",
         )
         trait_text = " · ".join(traits.get(name, [])[:3]) or "特殊单位"
-        draw.text((x + 18, y + image_h + 18), trait_text, font=fit_text(draw, trait_text, card_w - 36, 19), fill=muted)
+        draw.text(
+            (x + 18, y + image_h + 18),
+            trait_text,
+            font=fit_text(draw, trait_text, card_w - 36, 19),
+            fill=white,
+        )
 
     README_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
     canvas.save(README_IMAGE_DIR / "tft_web.png", optimize=True)
 
 
-def draw_terminal():
-    raw, processed, errors, counts, season, title, config = season_context()
-    canvas = Image.new("RGB", (2048, 700), "#151515")
-    draw = ImageDraw.Draw(canvas)
-    fg, dim, green, cyan, yellow, red = (
-        "#e7e7e7", "#8d8d8d", "#27d17f", "#42c8f5", "#e8d44d", "#ef6b73"
-    )
-    draw.rectangle((0, 0, 2048, 58), fill="#222222")
-    draw.ellipse((22, 19, 42, 39), fill="#ff5f57")
-    draw.ellipse((52, 19, 72, 39), fill="#febc2e")
-    draw.ellipse((82, 19, 102, 39), fill="#28c840")
-    draw.text((128, 13), f"TFT_Spider — {season} {title}", font=font(23, True), fill=fg)
-
-    lines = [
-        (f"$ python main.py --workers 24", cyan),
-        (f"[配置] {season}-{title} / {config['版本信息']} / {config['爬取日期']}", fg),
-        ("", fg),
-        ("原始数据已保存：tft_data/tft_raw_data.json", green),
-    ]
-    labels = {
-        "chess": "棋子", "skill": "技能", "hex": "强化符文", "equip": "装备",
-        "task": "英雄任务", "bless": "神祇祝福", "elf": "仙灵 Wisp",
-        "powerup": "强化果实",
-    }
-    for key, value in counts.items():
-        label = labels.get(key, key)
-        lines.append((f"下载 {label:<8} {'━' * 35} 100%  {value:>4} 个", fg))
-    lines.extend([
-        ("", fg),
-        (f"图片校验完成：{sum(counts.values())} 张有效图片", green),
-        (
-            f"官方不可用图片链接：{len(errors)} 个（详见 image_download_errors.json）",
-            yellow if errors else green,
-        ),
-        ("处理后数据已保存：tft_data/tft_processed_data.json", green),
-        ("Singleton 已保存：tft_data/TFTData.py", green),
-        (f"完成：{season} {title}", green),
-    ])
-
-    y = 82
-    for text, color in lines:
-        draw.text((34, y), text, font=font(24, True), fill=color)
-        y += 43
-    draw.text((1780, 650), "可复现运行摘要", font=font(18), fill=dim)
-    canvas.save(README_IMAGE_DIR / "terminal.png", optimize=True)
-
-
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--season", help="校验当前分支的赛季，例如 s18")
+    parser.add_argument("--season", help="校验当前目录的赛季，例如 s18")
     args = parser.parse_args()
     raw = read_json(DATA_DIR / "tft_raw_data.json")
     actual = raw["version_config"]["赛季名称"].split("-", 1)[0].lower()
     if args.season and args.season.lower() != actual:
         raise SystemExit(f"当前数据是 {actual}，不是 {args.season}")
     draw_overview()
-    draw_terminal()
     print(f"generated {README_IMAGE_DIR / 'tft_web.png'}")
-    print(f"generated {README_IMAGE_DIR / 'terminal.png'}")
 
 
 if __name__ == "__main__":
