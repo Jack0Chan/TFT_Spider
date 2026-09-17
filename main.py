@@ -31,6 +31,13 @@ EXTRA_URLS = {
     "bless": "urlBlessData", "elf": "urlElfData",
 }
 IMAGE_EXT = {"s16": "jpg", "s17": "png", "s18": "png"}
+CURRENT_CORE_URLS = {
+    "chess": "https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js",
+    "race": "https://game.gtimg.cn/images/lol/act/img/tft/js/race.js",
+    "job": "https://game.gtimg.cn/images/lol/act/img/tft/js/job.js",
+    "equip": "https://game.gtimg.cn/images/lol/act/img/tft/js/equip.js",
+    "hex": "https://game.gtimg.cn/images/lol/act/img/tft/js/hex.js",
+}
 CHESS_PREFIXES = {
     "s16": ("TFT16_",), "s17": ("TFT17_",),
     "s18": ("DA_18_", "TFT18_"),
@@ -79,6 +86,7 @@ class RawDataCollector:
         self.timeout = timeout
         self._cache = {}
         self.data_urls = {}
+        self.fallback_data_urls = {}
         self.image_errors = []
         self.version_config = self._get_version_info()
         self.raw_data = {"version_config": self.version_config}
@@ -107,6 +115,15 @@ class RawDataCollector:
         for kind, key in {**CORE_URLS, **EXTRA_URLS}.items():
             if selected.get(key):
                 self.data_urls[kind] = str(selected[key]).strip()
+        self.fallback_data_urls = dict(self.data_urls)
+
+        # The catalogue retains the S18 launch snapshot for stable historical
+        # URLs, while the unversioned official endpoints receive live patches.
+        # Prefer them only after confirming that they still identify as S18.
+        if self.season == "s18":
+            current_race = self._request_json(CURRENT_CORE_URLS["race"])
+            if str(current_race.get("season", "")).upper().endswith(".S18"):
+                self.data_urls.update(CURRENT_CORE_URLS)
         race_payload = self._request_json(self.data_urls["race"])
         version = race_payload.get("version") or selected["arrVersionLimit"][0]
         return {
@@ -237,6 +254,14 @@ class RawDataCollector:
 
     def download_skill_imgs(self, workers=12):
         tasks = []
+        fallback = {}
+        old_url = self.fallback_data_urls.get("chess")
+        if old_url and old_url != self.data_urls.get("chess"):
+            old_payload = self._request_json(old_url)
+            fallback = {
+                str(item.get("hero_EN_name")): item
+                for item in old_payload.get("data", [])
+            }
         for chess in select_season_chess(self.raw_data, self.season):
             if not chess.get("skillImage"):
                 continue
@@ -245,7 +270,11 @@ class RawDataCollector:
                 chess.get("displayName"), chess.get("skillName"),
             )
             filename = "-".join(safe_name(part) for part in parts) + ".jpg"
-            tasks.append((TFT_IMG_FILE / "skill" / filename, self._urls(chess["skillImage"])))
+            old = fallback.get(str(chess.get("hero_EN_name")), {})
+            urls = self._urls(
+                chess["skillImage"], old.get("skillImage"), old.get("originalImage")
+            )
+            tasks.append((TFT_IMG_FILE / "skill" / filename, urls))
         self._download_tasks(tasks, "正在下载技能图片", workers)
 
     def download_hex_imgs(self, workers=12):
@@ -260,12 +289,25 @@ class RawDataCollector:
 
     def download_equipment_imgs(self, workers=12):
         tasks = []
+        fallback = {}
+        old_url = self.fallback_data_urls.get("equip")
+        if old_url and old_url != self.data_urls.get("equip"):
+            old_payload = self._request_json(old_url)
+            fallback = {
+                str(item.get("TFTID") or item.get("equipId")): item
+                for item in old_payload.get("data", [])
+            }
         for item in self.raw_data.get("equip", []):
+            item_id = str(item.get("TFTID") or item.get("equipId"))
             filename = (
-                f"{safe_name(item.get('TFTID') or item.get('equipId'))}-"
+                f"{safe_name(item_id)}-"
                 f"{safe_name(item.get('name'))}.jpg"
             )
-            tasks.append((TFT_IMG_FILE / "equip" / filename, self._urls(item.get("imagePath"))))
+            old = fallback.get(item_id, {})
+            tasks.append((
+                TFT_IMG_FILE / "equip" / filename,
+                self._urls(item.get("imagePath"), old.get("imagePath")),
+            ))
         self._download_tasks(tasks, "正在下载装备图片", workers)
 
     def download_extra_imgs(self, workers=12):
